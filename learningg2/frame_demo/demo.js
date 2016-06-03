@@ -169,8 +169,8 @@
         chart.point().position("SepalLength*SepalWidth").color('Species').tooltip("SepalLength*SepalWidth*PetalLength*PetalWidth*Species");
         var sepal_length_average = Frame.mean(frame, "SepalLength");
         var sepal_width_average = Frame.mean(frame, "SepalWidth");
-        chart.guide().tag([sepal_length_average, 0], [sepal_length_average, 4.5], 'SepalLength Average:'+ sepal_length_average.toFixed(2))
-        chart.guide().tag([0, sepal_width_average], [8, sepal_width_average], 'SepalWidth Average: ' + sepal_width_average.toFixed(2))
+        chart.guide().tag([sepal_length_average, 0], [sepal_length_average, 4.5], 'SepalLength Average:'+ sepal_length_average.toFixed(2));
+        chart.guide().tag([0, sepal_width_average], [8, sepal_width_average], 'SepalWidth Average: ' + sepal_width_average.toFixed(2));
         chart.render();
-    })
+    });
 })();
