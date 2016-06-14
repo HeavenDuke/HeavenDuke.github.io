@@ -5,7 +5,7 @@
 (function () {
     $(document).ready(function () {
         var data = [
-            {type: '类型一',value: 10},
+            {type: '类型一',value: 25},
             {type: '类型二',value: 15},
             {type: '类型三',value: 15},
             {type: '类型四',value: 20},
