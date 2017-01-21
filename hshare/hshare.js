@@ -123,7 +123,13 @@
         };
 
         var _renderWechat = function (icon, text) {
-            return "<a class='hshare hshare-" + size + "' href='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + url + "&title=" + title + "' target='_blank'  title='分享到QQ空间'><img src=" + icon + " alt='分享到QQ空间' />" + text + "<\/a>";
+            var size = sizes.includes(opts.size) ? opts.size : "medium";
+            if (opts.renderText) {
+                return "<a class='hshare hshare-" + size + "' href='#'  title='分享到微信'><img src=" + icon + " alt='分享到微信' />" + text + "<\/a>";
+            }
+            else {
+                return "<a class='hshare hshare-" + size + "' href='#' target='_blank'  title='分享到微信'><img src=" + icon + " alt='分享到微信' /><\/a>";
+            }
         };
 
         var _renderQzone = function (icon, text) {
