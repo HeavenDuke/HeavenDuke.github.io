@@ -21,6 +21,10 @@ $("#container").hshare({
         platform: "sinaweibo",
         icon: "https://img.t.sinajs.cn/t4/appstyle/widget/images/shareButton/share_icon_mini.png?id=1375775002754",
         text: "新浪微博"
+    }, {
+        platform: "wechat",
+        icon: "https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png",
+        text: "微信"
     }]
 });
 
@@ -43,6 +47,10 @@ $("#container2").hshare({
         platform: "sinaweibo",
         icon: "https://img.t.sinajs.cn/t4/appstyle/widget/images/shareButton/share_icon_mini.png?id=1375775002754",
         text: "新浪微博"
+    }, {
+        platform: "wechat",
+        icon: "https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png",
+        text: "微信"
     }]
 });
 
@@ -65,5 +73,9 @@ $("#container3").hshare({
         platform: "sinaweibo",
         icon: "https://img.t.sinajs.cn/t4/appstyle/widget/images/shareButton/share_icon_mini.png?id=1375775002754",
         text: "新浪微博"
+    }, {
+        platform: "wechat",
+        icon: "https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png",
+        text: "微信"
     }]
 });

@@ -16,7 +16,9 @@
         }, {
             platform: "qq"
         }, {
-            platform: "wechat"
+            platform: "wechat",
+            icon: "https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png",
+            text: "微信"
         }, {
             platform: "sinaweibo",
             icon: "https://img.t.sinajs.cn/t4/appstyle/widget/images/shareButton/share_icon_mini.png?id=1375775002754",
@@ -38,7 +40,9 @@
         }, {
             platform: "qq"
         }, {
-            platform: "wechat"
+            platform: "wechat",
+            icon: "https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png",
+            text: "微信"
         }, {
             platform: "sinaweibo",
             icon: "https://img.t.sinajs.cn/t4/appstyle/widget/images/shareButton/share_icon_mini.png?id=1375775002754",
@@ -60,7 +64,9 @@
         }, {
             platform: "qq"
         }, {
-            platform: "wechat"
+            platform: "wechat",
+            icon: "https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png",
+            text: "微信"
         }, {
             platform: "sinaweibo",
             icon: "https://img.t.sinajs.cn/t4/appstyle/widget/images/shareButton/share_icon_mini.png?id=1375775002754",
@@ -90,33 +96,34 @@
             else {
                 switch(platform) {
                     case "qzone":
-                        return _renderQzone(icon, text);
+                        return $(_renderQzone(icon, text));
                         break;
                     case "wechat":
-                        return _renderWechat(icon, text);
+                        var wechatEntry = $(_renderWechat(icon, text));
+                        wechatEntry.on('click', _renderWechatQECode);
+                        return wechatEntry;
                         break;
                     case "sinaweibo":
-                        return _renderSinaWeibo(icon, text);
+                        return $(_renderSinaWeibo(icon, text));
                         break;
                     case "renren":
-                        return _renderRenren(icon, text);
-                        break;
-                    case "kaixin":
-                        return _renderKaixin(icon, text);
-                        break;
-                    case "txweibo":
-                        return _renderTXWeibo(icon, text);
-                        break;
-                    case "linkage":
-                        return _renderLinkage(icon, text);
+                        return $(_renderRenren(icon, text));
                         break;
                     case "douban":
-                        return _renderDouban(icon, text);
+                        return $(_renderDouban(icon, text));
                         break;
                     default:
                         throw Error("invalid platform");
                 }
             }
+        };
+
+        var _renderWechatQECode = function () {
+            console.log($(this).offset());
+        };
+
+        var _renderWechat = function (icon, text) {
+            return "<a class='hshare hshare-" + size + "' href='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + url + "&title=" + title + "' target='_blank'  title='分享到QQ空间'><img src=" + icon + " alt='分享到QQ空间' />" + text + "<\/a>";
         };
 
         var _renderQzone = function (icon, text) {
