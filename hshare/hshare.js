@@ -118,29 +118,13 @@
             }
         };
 
-        var _renderWechatQECode = function () {
-            var startX = $(this).offset().left + $(this).width();
-            var startY = $(this).offset().top + $(this).height();
-            var width = 200, height = 200;
-            var containerWidth = 250, containerHeight = 250;
-            var padding = (containerHeight - height) / 2;
-            var panelStyle = "position: absolute; left: " + startX + "px; top: " + startY + "px; width: " + containerWidth + "px; height: " + containerHeight + "px;";
-            var imageStyle = "position: absolute; left: " + (startX + padding) +  + "px; top: " + (startY + padding) + "px; width: " + width + "px; height: " + height + "px;";
-            var panel = $("<div style='" + panelStyle + "'><img style='" + imageStyle + "'></div>");
-            console.log(panel);
-            panel.on('blur', function () {
-                $(this).remove();
-            });
-            $("body").append(panel);
-        };
-
         var _renderWechat = function (icon, text) {
             var size = sizes.includes(opts.size) ? opts.size : "medium";
             if (opts.renderText) {
-                return "<a class='hshare hshare-" + size + "' href='#' title='分享到微信'><img src=" + icon + " alt='分享到微信' />" + text + "<\/a>";
+                return "<a class='hshare hshare-" + size + "' href='https://cli.im/api/qrcode' target='_blank' title='分享到微信'><img src=" + icon + " alt='分享到微信' />" + text + "<\/a>";
             }
             else {
-                return "<a class='hshare hshare-" + size + "' href='#' title='分享到微信'><img src=" + icon + " alt='分享到微信' /><\/a>";
+                return "<a class='hshare hshare-" + size + "' href='https://cli.im/api/qrcode' target='_blank' title='分享到微信'><img src=" + icon + " alt='分享到微信' /><\/a>";
             }
         };
 
