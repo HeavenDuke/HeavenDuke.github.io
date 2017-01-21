@@ -63,6 +63,7 @@
         opts.platforms = [];
         if (options.platforms instanceof Array) {
             options.platforms.forEach(function (platform) {
+                console.log($.extend({}, platform, (platform.name && platforms[platform.name]) ? defaultPlatforms[platform.name] : {}));
                 opts.platforms.push($.extend({}, platform, (platform.name && platforms[platform.name]) ? defaultPlatforms[platform.name] : {}));
             });
         }
