@@ -13,6 +13,10 @@ $("#container").hshare({
         platform: "douban",
         icon: "https://img3.doubanio.com/pics/fw2douban_s.png",
         text: "豆瓣"
+    }, {
+        platform: "renren",
+        icon: "http://dev.renren.com/views/website/inc/images/share08.png",
+        text: "人人网"
     }]
 });
 
@@ -27,6 +31,10 @@ $("#container2").hshare({
         platform: "douban",
         icon: "https://img3.doubanio.com/pics/fw2douban_s.png",
         text: "豆瓣"
+    }, {
+        platform: "renren",
+        icon: "http://dev.renren.com/views/website/inc/images/share09.png",
+        text: "人人网"
     }]
 });
 
@@ -41,5 +49,9 @@ $("#container3").hshare({
         platform: "douban",
         icon: "https://img3.doubanio.com/pics/fw2douban_s.png",
         text: "豆瓣"
+    }, {
+        platform: "renren",
+        icon: "http://dev.renren.com/views/website/inc/images/share10.png",
+        text: "人人网"
     }]
 });
