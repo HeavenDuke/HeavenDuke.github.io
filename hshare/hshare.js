@@ -128,7 +128,7 @@
                 return "<a class='hshare hshare-" + size + "' title='分享到微信'><img src=" + icon + " alt='分享到微信' />" + text + "<\/a>";
             }
             else {
-                return "<a class='hshare hshare-" + size + "' target='_blank'  title='分享到微信'><img src=" + icon + " alt='分享到微信' /><\/a>";
+                return "<a class='hshare hshare-" + size + "' title='分享到微信'><img src=" + icon + " alt='分享到微信' /><\/a>";
             }
         };
 
