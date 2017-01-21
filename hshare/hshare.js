@@ -12,7 +12,7 @@
         shares: [{
             platform: "qzone",
             icon: "https://qzonestyle.gtimg.cn/ac/qzone_v5/app/app_share/qz_logo.png",
-            text: "分享到QQ空间"
+            text: "QQ空间"
         }, {
             platform: "qq"
         }, {
@@ -20,7 +20,9 @@
         }, {
             platform: "weibo"
         }, {
-            platform: "link"
+            platform: "douban",
+            icon: "https://img3.doubanio.com/pics/fw2douban_s.png",
+            text: "豆瓣"
         }]
     };
 
@@ -30,7 +32,7 @@
         shares: [{
             platform: "qzone",
             icon: "https://qzonestyle.gtimg.cn/ac/qzone_v5/app/app_share/qz_logo.png",
-            text: "分享到QQ空间"
+            text: "QQ空间"
         }, {
             platform: "qq"
         }, {
@@ -38,7 +40,9 @@
         }, {
             platform: "weibo"
         }, {
-            platform: "link"
+            platform: "douban",
+            icon: "https://img3.doubanio.com/pics/fw2douban_s.png",
+            text: "豆瓣"
         }]
     };
 
@@ -48,7 +52,7 @@
         shares: [{
             platform: "qzone",
             icon: "https://qzonestyle.gtimg.cn/ac/qzone_v5/app/app_share/qz_logo.png",
-            text: "分享到QQ空间"
+            text: "QQ空间"
         }, {
             platform: "qq"
         }, {
@@ -56,7 +60,9 @@
         }, {
             platform: "weibo"
         }, {
-            platform: "link"
+            platform: "douban",
+            icon: "https://img3.doubanio.com/pics/fw2douban_s.png",
+            text: "豆瓣"
         }]
     };
 
@@ -98,6 +104,9 @@
                     case "linkage":
                         return _renderLinkage(icon, text);
                         break;
+                    case "douban":
+                        return _renderDouban(icon, text);
+                        break;
                     default:
                         throw Error("invalid platform");
                 }
@@ -111,6 +120,16 @@
             }
             else {
                 return "<a class='hshare-" + size + "' href='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + url + "&title=" + title + "' target='_blank'  title='分享到QQ空间'><img src=" + icon + " alt='分享到QQ空间' /><\/a>";
+            }
+        };
+
+        var _renderDouban = function (icon, text) {
+            var size = sizes.includes(opts.size) ? opts.size : "medium";
+            if (opts.renderText) {
+                return "<a class='hshare-" + size + "'  href=\"javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='https://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()\"><img src='" + icon + "' alt='推荐到豆瓣' />" + text + "</a>";
+            }
+            else {
+                return "<a class='hshare-" + size + "'  href=\"javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='https://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()\"><img src='" + icon + "' alt='推荐到豆瓣' /></a>";
             }
         };
 
