@@ -124,8 +124,8 @@
             var width = 50, height = 50;
             var containerWidth = 70, containerHeight = 70;
             var padding = (containerHeight - height) / 2;
-            var panelStyle = "position: absolute; left: " + startX + "px; top: " + startY + "px; width: " + containerWidth + "; height: " + containerHeight + "px;";
-            var imageStyle = "position: absolute; left: " + (startX + padding) +  + "px; top: " + (startY + padding) + "px; width: " + width + "; height: " + height + "px;";
+            var panelStyle = "position: absolute; left: " + startX + "px; top: " + startY + "px; width: " + containerWidth + "px; height: " + containerHeight + "px;";
+            var imageStyle = "position: absolute; left: " + (startX + padding) +  + "px; top: " + (startY + padding) + "px; width: " + width + "px; height: " + height + "px;";
             var panel = $("<div style='" + panelStyle + "'><img style='" + imageStyle + "'></div>");
             console.log(panel);
             panel.on('blur', function () {
