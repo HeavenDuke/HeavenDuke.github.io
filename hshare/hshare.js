@@ -119,8 +119,8 @@
         };
 
         var _renderWechatQECode = function () {
-            var startX = $(this).offset().left + $(this).width;
-            var startY = $(this).offset().top + $(this).height;
+            var startX = $(this).offset().left + $(this).width();
+            var startY = $(this).offset().top + $(this).height();
             var width = 50, height = 50;
             var containerWidth = 70, containerHeight = 70;
             var padding = (containerHeight - height) / 2;
