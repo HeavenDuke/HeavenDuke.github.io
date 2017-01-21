@@ -17,6 +17,10 @@ $("#container").hshare({
         platform: "renren",
         icon: "http://dev.renren.com/views/website/inc/images/share08.png",
         text: "人人网"
+    }, {
+        platform: "sinaweibo",
+        icon: "https://img.t.sinajs.cn/t4/appstyle/widget/images/shareButton/share_icon_mini.png?id=1375775002754",
+        text: "新浪微博"
     }]
 });
 
@@ -35,6 +39,10 @@ $("#container2").hshare({
         platform: "renren",
         icon: "http://dev.renren.com/views/website/inc/images/share09.png",
         text: "人人网"
+    }, {
+        platform: "sinaweibo",
+        icon: "https://img.t.sinajs.cn/t4/appstyle/widget/images/shareButton/share_icon_mini.png?id=1375775002754",
+        text: "新浪微博"
     }]
 });
 
@@ -53,5 +61,9 @@ $("#container3").hshare({
         platform: "renren",
         icon: "http://dev.renren.com/views/website/inc/images/share10.png",
         text: "人人网"
+    }, {
+        platform: "sinaweibo",
+        icon: "https://img.t.sinajs.cn/t4/appstyle/widget/images/shareButton/share_icon_mini.png?id=1375775002754",
+        text: "新浪微博"
     }]
 });
