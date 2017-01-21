@@ -61,6 +61,9 @@
         var size = sizes.includes(opts.size) ? opts.size : "medium";
 
         opts.platforms = [];
+        console.log(options.platforms);
+        console.log(typeof options.platforms);
+        console.log(options.platforms instanceof Array);
         if (options.platforms instanceof Array) {
             options.platforms.forEach(function (platform) {
                 console.log($.extend({}, platform, (platform.name && platforms[platform.name]) ? defaultPlatforms[platform.name] : {}));
