@@ -121,8 +121,8 @@
         var _renderWechatQECode = function () {
             var startX = $(this).offset().left + $(this).width();
             var startY = $(this).offset().top + $(this).height();
-            var width = 50, height = 50;
-            var containerWidth = 70, containerHeight = 70;
+            var width = 200, height = 200;
+            var containerWidth = 250, containerHeight = 250;
             var padding = (containerHeight - height) / 2;
             var panelStyle = "position: absolute; left: " + startX + "px; top: " + startY + "px; width: " + containerWidth + "px; height: " + containerHeight + "px;";
             var imageStyle = "position: absolute; left: " + (startX + padding) +  + "px; top: " + (startY + padding) + "px; width: " + width + "px; height: " + height + "px;";
