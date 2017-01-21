@@ -4,11 +4,14 @@
 
 $("#container").hshare({
     size: "large",
-    renderText: true,
     shares: [{
         platform: "qzone",
         icon: "https://qzonestyle.gtimg.cn/ac/qzone_v5/app/app_share/qz_logo.png",
         text: "分享到QQ空间"
+    }, {
+        platform: "qq",
+        icon: "https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png",
+        text: "QQ好友"
     }, {
         platform: "douban",
         icon: "https://img3.doubanio.com/pics/fw2douban_s.png",
@@ -33,8 +36,11 @@ $("#container2").hshare({
     renderText: true,
     shares: [{
         platform: "qzone",
-        icon: "https://qzonestyle.gtimg.cn/ac/qzone_v5/app/app_share/qz_logo.png",
         text: "分享到QQ空间"
+    }, {
+        platform: "qq",
+        icon: "https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png",
+        text: "QQ好友"
     }, {
         platform: "douban",
         icon: "https://img3.doubanio.com/pics/fw2douban_s.png",
@@ -61,6 +67,10 @@ $("#container3").hshare({
         platform: "qzone",
         icon: "https://qzonestyle.gtimg.cn/ac/qzone_v5/app/app_share/qz_logo.png",
         text: "分享到QQ空间"
+    }, {
+        platform: "qq",
+        icon: "https://open.weixin.qq.com/zh_CN/htmledition/res/assets/res-design-download/icon64_appwx_logo.png",
+        text: "QQ好友"
     }, {
         platform: "douban",
         icon: "https://img3.doubanio.com/pics/fw2douban_s.png",
