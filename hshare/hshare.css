@@ -16,4 +16,5 @@ a.hshare-small img {
 a.hshare-*:hover, a.hshare-*:visited, a.hshare-*:link, a.hshare-*:active {
     color: black;
     text-decoration: none;
+    padding: 2px 2px 2px 2px;
 }
