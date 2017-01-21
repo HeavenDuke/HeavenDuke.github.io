@@ -4,7 +4,7 @@
 
 $("#container").hshare({
     size: "large",
-    hasText: true,
+    renderText: true,
     shares: [{
         platform: "qzone",
         icon: "https://qzonestyle.gtimg.cn/ac/qzone_v5/app/app_share/qz_logo.png",
@@ -30,7 +30,7 @@ $("#container").hshare({
 
 $("#container2").hshare({
     size: "medium",
-    hasText: true,
+    renderText: true,
     shares: [{
         platform: "qzone",
         icon: "https://qzonestyle.gtimg.cn/ac/qzone_v5/app/app_share/qz_logo.png",
@@ -56,7 +56,7 @@ $("#container2").hshare({
 
 $("#container3").hshare({
     size: "small",
-    hasText: true,
+    renderText: true,
     shares: [{
         platform: "qzone",
         icon: "https://qzonestyle.gtimg.cn/ac/qzone_v5/app/app_share/qz_logo.png",
