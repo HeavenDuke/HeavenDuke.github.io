@@ -125,10 +125,10 @@
         var _renderWechat = function (icon, text) {
             var size = sizes.includes(opts.size) ? opts.size : "medium";
             if (opts.renderText) {
-                return "<a class='hshare hshare-" + size + "' title='分享到微信'><img src=" + icon + " alt='分享到微信' />" + text + "<\/a>";
+                return "<a class='hshare hshare-" + size + "' href='#' title='分享到微信'><img src=" + icon + " alt='分享到微信' />" + text + "<\/a>";
             }
             else {
-                return "<a class='hshare hshare-" + size + "' title='分享到微信'><img src=" + icon + " alt='分享到微信' /><\/a>";
+                return "<a class='hshare hshare-" + size + "' href='#' title='分享到微信'><img src=" + icon + " alt='分享到微信' /><\/a>";
             }
         };
 
