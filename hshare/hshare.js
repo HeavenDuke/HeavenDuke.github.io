@@ -128,7 +128,7 @@
             panel.on('blur', function () {
                 $(this).remove();
             });
-            $(document).append(panel);
+            $("body").append(panel);
         };
 
         var _renderWechat = function (icon, text) {
