@@ -96,21 +96,19 @@
             else {
                 switch(platform) {
                     case "qzone":
-                        return $(_renderQzone(icon, text));
+                        return _renderQzone(icon, text);
                         break;
                     case "wechat":
-                        var wechatEntry = $(_renderWechat(icon, text));
-                        wechatEntry.on('click', _renderWechatQECode);
-                        return wechatEntry;
+                        return _renderWechat(icon, text);
                         break;
                     case "sinaweibo":
-                        return $(_renderSinaWeibo(icon, text));
+                        return _renderSinaWeibo(icon, text);
                         break;
                     case "renren":
-                        return $(_renderRenren(icon, text));
+                        return _renderRenren(icon, text);
                         break;
                     case "douban":
-                        return $(_renderDouban(icon, text));
+                        return _renderDouban(icon, text);
                         break;
                     default:
                         throw Error("invalid platform");
