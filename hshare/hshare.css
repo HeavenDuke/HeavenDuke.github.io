@@ -13,7 +13,7 @@ a.hshare-small img {
     height: 5px;
 }
 
-a.hshare-*:hover, a.hshare-*:visited, a.hshare-*:link, a.hshare-*:active {
+a.hshare-large:hover, a.hshare-large:visited, a.hshare-large:link, a.hshare-large:active, a.hshare-medium:hover, a.hshare-medium:visited, a.hshare-medium:link, a.hshare-medium:active, a.hshare-small:hover, a.hshare-small:visited, a.hshare-small:link, a.hshare-small:active {
     color: black;
     text-decoration: none;
     padding: 2px 2px 2px 2px;
