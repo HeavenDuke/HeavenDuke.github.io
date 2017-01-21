@@ -119,7 +119,16 @@
         };
 
         var _renderWechatQECode = function () {
-            console.log($(this).offset());
+            var startX = $(this).offset.left + $(this).width;
+            var startY = $(this).offset.top + $(this).height;
+            var width = 50, height = 50;
+            var panelStyle = "position: absolute; left: " + startX + "px; top: " + startY + "px; width: " + width + "; height: " + height + "px;";
+            var imageStyle = "position: absolute; left: " + (startX) + "px; top: " + startY + "px; width: " + width + "; height: " + height + "px;";;
+            var panel = $("<div style='" + panelStyle + "'><img style='" + imageStyle + "'></div>");
+            panel.on('blur', function () {
+                $(this).remove();
+            });
+            $(document).append(panel);
         };
 
         var _renderWechat = function (icon, text) {
