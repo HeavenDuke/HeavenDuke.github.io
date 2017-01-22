@@ -84,11 +84,16 @@
             default: false,
             icon: "https://ohtikzqed.bkt.clouddn.com/reddit.png",
             text: "Reddit"
+        },
+        copyLink: {
+            default: false,
+            icon: "https://ohtikzqed.bkt.clouddn.com/copylink.png"
         }
     };
 
     var defaults = {
         size: "small",
+        copyLink: true,
         platforms: []
     };
 
@@ -187,6 +192,46 @@
             return "<a class='hshare hshare-" + size + "' href='https://www.reddit.com/submit?url=" + url + "&title=" + title + "' target='_blank' title='分享到Reddit'><img alt='分享到Reddit' src='" + icon + "'></a>";
         };
 
+        var _renderCopyLink = function (icon) {
+            return "<a class='hshare hshare-" + size + "' href='#' title='复制链接'><img alt='复制链接' src='" + icon + "'></a>";
+        };
+
+        var _copyToClipboard = function(txt) {
+            if (window.clipboardData) {
+                window.clipboardData.clearData();
+                window.clipboardData.setData("Text", txt);
+                alert("<strong>复制</strong>成功！")
+            } else if (navigator.userAgent.indexOf("Opera") != -1) {
+                window.location = txt;
+                alert("<strong>复制</strong>成功！");
+            } else if (window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                } catch (e) {
+                    alert("被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将 'signed.applets.codebase_principal_support'设置为'true'");
+                }
+                var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+                if (!clip)
+                    return;
+                var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+                if (!trans)
+                    return;
+                trans.addDataFlavor('text/unicode');
+                var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+                var copytext = txt;
+                str.data = copytext;
+                trans.setTransferData("text/unicode", str, copytext.length * 2);
+                var clipid = Components.interfaces.nsIClipboard;
+                if (!clip)
+                    return false;
+                clip.setData(trans, null, clipid.kGlobalClipboard);
+                alert("<strong>复制</strong>成功！")
+            }else if(copy){
+                copy(txt);
+                alert("<strong>复制</strong>成功！")
+            }
+        };
+
         var url = encodeURIComponent(location.href);
         var title = encodeURIComponent(document.title);
 
@@ -219,6 +264,14 @@
                 var customize = plt.customize || "";
                 $this.append($(_render(name, icon, isCustomized, customize)));
             });
+
+            if(opts.copyLink) {
+                var copyEntry = $(_renderCopyLink(defaults.copyLink.icon));
+                copyEntry.on('click', function () {
+                    _copyToClipboard(location.href);
+                });
+                $this.append(copyEntry);
+            }
 
         });
     };

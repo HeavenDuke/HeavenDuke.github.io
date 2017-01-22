@@ -4,6 +4,7 @@
 
 $("#container").hshare({
     size: "large",
+    copyLink: true,
     platforms: [{
         name: "kaixin"
     }, {
