@@ -33,3 +33,8 @@ $("#container").hshare({
         name: "reddit"
     }]
 });
+
+$("#container2").hshare({
+    size: "medium",
+    copyLink: false,
+});
