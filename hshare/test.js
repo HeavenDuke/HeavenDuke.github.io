@@ -37,5 +37,6 @@ $("#container").hshare({
 $("#container2").hshare({
     size: "medium",
     copyLink: false,
-    print: true
+    print: true,
+    bookmark: true
 });
