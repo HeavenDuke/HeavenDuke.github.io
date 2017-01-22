@@ -72,6 +72,18 @@
             default: false,
             icon: "https://ohtikzqed.bkt.clouddn.com/hexunweibo.png",
             text: "和讯微博"
+        },
+        tianya: {
+            name: "tianya",
+            default: false,
+            icon: "https://ohtikzqed.bkt.clouddn.com/tianya.png",
+            text: "天涯网"
+        },
+        reddit: {
+            name: "reddit",
+            default: false,
+            icon: "https://ohtikzqed.bkt.clouddn.com/reddit.png",
+            text: "Reddit"
         }
     };
 
@@ -112,6 +124,10 @@
                         return _renderRenminWeibo(icon);
                     case "hexunweibo":
                         return _renderHexunWeibo(icon);
+                    case "tianya":
+                        return _renderTianya(icon);
+                    case "reddit":
+                        return _renderReddit(icon);
                     default:
                         throw Error("invalid name");
                         break;
@@ -161,6 +177,14 @@
 
         var _renderHexunWeibo = function (icon) {
             return "<a class='hshare hshare-" + size + "' href='http://t.hexun.com/channel/shareweb.aspx?url=" + url + "&title=" + title + "' target='_blank' title='分享到和讯微博'><img alt='分享到和讯微博' src='" + icon + "'></a>";
+        };
+
+        var _renderTianya = function (icon) {
+            return "<a class='hshare hshare-" + size + "' href='http://open.tianya.cn/widget/send_for.php?action=send-html&shareTo=2&appkey=&url=" + url + "&title=" + title + "' target='_blank' title='分享到天涯网'><img alt='分享到天涯网' src='" + icon + "'></a>";
+        };
+
+        var _renderReddit = function (icon) {
+            return "<a class='hshare hshare-" + size + "' href='https://www.reddit.com/submit?url=" + url + "&title=" + title + "' target='_blank' title='分享到Reddit'><img alt='分享到Reddit' src='" + icon + "'></a>";
         };
 
         var url = encodeURIComponent(location.href);

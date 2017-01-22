@@ -26,5 +26,9 @@ $("#container").hshare({
         name: "renminweibo"
     }, {
         name: "hexunweibo"
+    }, {
+        name: "tianya"
+    }, {
+        name: "reddit"
     }]
 });
