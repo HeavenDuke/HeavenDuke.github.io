@@ -116,7 +116,7 @@
         };
 
         var _renderDouban = function (icon) {
-            return "<a class='hshare hshare-" + size + "'  href='http://www.douban.com/recommend?url=" + url + "&title=" + title + " target='_blank''><img src='" + icon + "' alt='推荐到豆瓣' /></a>";
+            return "<a class='hshare hshare-" + size + "'  href='http://www.douban.com/recommend?url=" + url + "&title=" + title + "' target='_blank''><img src='" + icon + "' alt='推荐到豆瓣' /></a>";
         };
 
         var _renderRenren = function (icon) {
