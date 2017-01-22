@@ -249,10 +249,14 @@
             if(opts.copyLink) {
                 var copyEntry = $(_renderCopyLink(platforms.copyLink.icon));
                 _loadScript("https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js", function () {
-                    new Clipboard(copyEntry[0], {
+                    var clipboard = new Clipboard(copyEntry[0], {
                         text: function(trigger) {
                             return location.href;
                         }
+                    });
+
+                    clipboard.on('success', function(e) {
+                        alert("已复制链接到剪贴板");
                     });
                 });
                 $this.append(copyEntry);
