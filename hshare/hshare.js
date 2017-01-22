@@ -66,6 +66,12 @@
             default: false,
             icon: "https://ohtikzqed.bkt.clouddn.com/renminweibo.png",
             text: "人民微博"
+        },
+        hexunweibo: {
+            name: "hexunweibo",
+            default: false,
+            icon: "https://ohtikzqed.bkt.clouddn.com/hexunweibo.png",
+            text: "和讯微博"
         }
     };
 
@@ -104,6 +110,8 @@
                         return _renderTieba(icon);
                     case "renminweibo":
                         return _renderRenminWeibo(icon);
+                    case "hexunweibo":
+                        return _renderHexunWeibo(icon);
                     default:
                         throw Error("invalid name");
                         break;
@@ -149,6 +157,10 @@
 
         var _renderRenminWeibo = function (icon) {
             return "<a class='hshare hshare-" + size + "' href='http://t.people.com.cn/toshareinfo.action?url=" + url + "&title=" + title + "' target='_blank' title='分享到人民微博'><img alt='分享到人民微博' src='" + icon + "'></a>";
+        };
+
+        var _renderHexunWeibo = function (icon) {
+            return "<a class='hshare hshare-" + size + "' href='http://t.hexun.com/channel/shareweb.aspx?url=" + url + "&title=" + title + "' target='_blank' title='分享到和讯微博'><img alt='分享到和讯微博' src='" + icon + "'></a>";
         };
 
         var url = encodeURIComponent(location.href);

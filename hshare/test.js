@@ -24,5 +24,7 @@ $("#container").hshare({
         name: "wechat"
     }, {
         name: "renminweibo"
+    }, {
+        name: "hexunweibo"
     }]
 });
