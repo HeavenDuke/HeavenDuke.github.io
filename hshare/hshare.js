@@ -249,7 +249,7 @@
             if(opts.copyLink) {
                 var copyEntry = $(_renderCopyLink(platforms.copyLink.icon));
                 _loadScript("https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js", function () {
-                    new Clipboard(copyEntry, {
+                    new Clipboard(copyEntry[0], {
                         text: function(trigger) {
                             return location.href;
                         }
