@@ -193,43 +193,24 @@
         };
 
         var _renderCopyLink = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='#' title='复制链接'><img alt='复制链接' src='" + icon + "'></a>";
+            return "<a class='hshare hshare-" + size + "' title='复制链接'><img alt='复制链接' src='" + icon + "'></a>";
         };
 
-        var _copyToClipboard = function(txt) {
-            if (window.clipboardData) {
-                window.clipboardData.clearData();
-                window.clipboardData.setData("Text", txt);
-                alert("<strong>复制</strong>成功！")
-            } else if (navigator.userAgent.indexOf("Opera") != -1) {
-                window.location = txt;
-                alert("<strong>复制</strong>成功！");
-            } else if (window.netscape) {
-                try {
-                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-                } catch (e) {
-                    alert("被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将 'signed.applets.codebase_principal_support'设置为'true'");
-                }
-                var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
-                if (!clip)
-                    return;
-                var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
-                if (!trans)
-                    return;
-                trans.addDataFlavor('text/unicode');
-                var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
-                var copytext = txt;
-                str.data = copytext;
-                trans.setTransferData("text/unicode", str, copytext.length * 2);
-                var clipid = Components.interfaces.nsIClipboard;
-                if (!clip)
-                    return false;
-                clip.setData(trans, null, clipid.kGlobalClipboard);
-                alert("<strong>复制</strong>成功！")
-            }else if(copy){
-                copy(txt);
-                alert("<strong>复制</strong>成功！")
-            }
+        var _loadScript = function (url, callback)
+        {
+            // Adding the script tag to the head as suggested before
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+
+            // Then bind the event to the callback function.
+            // There are several events for cross browser compatibility.
+            script.onreadystatechange = callback;
+            script.onload = callback;
+
+            // Fire the loading
+            head.appendChild(script);
         };
 
         var url = encodeURIComponent(location.href);
@@ -267,9 +248,12 @@
 
             if(opts.copyLink) {
                 var copyEntry = $(_renderCopyLink(platforms.copyLink.icon));
-                copyEntry.on('click', function () {
-                    console.log(location.href);
-                    _copyToClipboard(location.href);
+                _loadScript("https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js", function () {
+                    new Clipboard(copyEntry, {
+                        text: function(trigger) {
+                            return location.href;
+                        }
+                    });
                 });
                 $this.append(copyEntry);
             }
