@@ -116,19 +116,19 @@
         };
 
         var _renderDouban = function (icon) {
-            return "<a class='hshare hshare-" + size + "'  href='http://www.douban.com/recommend?url=" + url + "&title=" + title + "'><img src='" + icon + "' alt='推荐到豆瓣' /></a>";
+            return "<a class='hshare hshare-" + size + "'  href='http://www.douban.com/recommend?url=" + url + "&title=" + title + " target='_blank''><img src='" + icon + "' alt='推荐到豆瓣' /></a>";
         };
 
         var _renderRenren = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://share.renren.com/share/buttonshare?link=" + url + "&title=" + title + "'><img alt='分享到人人网' src='" + icon + "' /></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://share.renren.com/share/buttonshare?link=" + url + "&title=" + title + "' target='_blank'><img alt='分享到人人网' src='" + icon + "' /></a>";
         };
 
         var _renderSinaWeibo = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://v.t.sina.com.cn/share/share.php?url=" + url + "&title=" + title + "'><img src='" + icon + "' alt='分享到新浪微博'/></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://v.t.sina.com.cn/share/share.php?url=" + url + "&title=" + title + "' target='_blank'><img src='" + icon + "' alt='分享到新浪微博'/></a>";
         };
 
         var _renderKaixin = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://www.kaixin001.com/repaste/share.php?rtitle=" + title + "&rurl=" + url + "'><img alt='分享到开心网' src='" + icon + "' /></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://www.kaixin001.com/repaste/share.php?rtitle=" + title + "&rurl=" + url + "' target='_blank'><img alt='分享到开心网' src='" + icon + "' /></a>";
         };
 
         var _renderPengyou = function (icon) {
@@ -136,7 +136,7 @@
         };
 
         var _renderTieba = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://tieba.baidu.com/f/commit/share/openShareApi?url=" + url + "&title=" + title + "'><img alt='分享到百度贴吧' src='" + icon + "'></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://tieba.baidu.com/f/commit/share/openShareApi?url=" + url + "&title=" + title + "' target='_blank'><img alt='分享到百度贴吧' src='" + icon + "'></a>";
         };
 
         var url = encodeURIComponent(location.href);
