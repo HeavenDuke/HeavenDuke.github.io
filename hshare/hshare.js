@@ -266,8 +266,9 @@
             });
 
             if(opts.copyLink) {
-                var copyEntry = $(_renderCopyLink(defaults.copyLink.icon));
+                var copyEntry = $(_renderCopyLink(platforms.copyLink.icon));
                 copyEntry.on('click', function () {
+                    console.log(location.href);
                     _copyToClipboard(location.href);
                 });
                 $this.append(copyEntry);
