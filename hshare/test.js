@@ -22,5 +22,7 @@ $("#container").hshare({
         name: "sinaweibo"
     }, {
         name: "wechat"
+    }, {
+        name: "renminweibo"
     }]
 });

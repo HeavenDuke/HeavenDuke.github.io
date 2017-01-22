@@ -60,6 +60,12 @@
             default: false,
             icon: "https://ohtikzqed.bkt.clouddn.com/tieba.png",
             text: "百度贴吧"
+        },
+        renminweibo: {
+            name: "renminweibo",
+            default: false,
+            icon: "https://ohtikzqed.bkt.clouddn.com/renminweibo.png",
+            text: "人民微博"
         }
     };
 
@@ -96,6 +102,8 @@
                         return _renderPengyou(icon);
                     case "tieba":
                         return _renderTieba(icon);
+                    case "renminweibo":
+                        return _renderRenminWeibo(icon);
                     default:
                         throw Error("invalid name");
                         break;
@@ -116,19 +124,19 @@
         };
 
         var _renderDouban = function (icon) {
-            return "<a class='hshare hshare-" + size + "'  href='http://www.douban.com/recommend?url=" + url + "&title=" + title + "' target='_blank''><img src='" + icon + "' alt='推荐到豆瓣' /></a>";
+            return "<a class='hshare hshare-" + size + "'  href='http://www.douban.com/recommend/?url=" + url + "&title=" + title + "' target='_blank'  title='推荐到豆瓣'><img src='" + icon + "' alt='推荐到豆瓣' /></a>";
         };
 
         var _renderRenren = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://share.renren.com/share/buttonshare?link=" + url + "&title=" + title + "' target='_blank'><img alt='分享到人人网' src='" + icon + "' /></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://share.renren.com/share/buttonshare?link=" + url + "&title=" + title + "' target='_blank' title='分享到人人网'><img alt='分享到人人网' src='" + icon + "' /></a>";
         };
 
         var _renderSinaWeibo = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://v.t.sina.com.cn/share/share.php?url=" + url + "&title=" + title + "' target='_blank'><img src='" + icon + "' alt='分享到新浪微博'/></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://v.t.sina.com.cn/share/share.php?url=" + url + "&title=" + title + "' target='_blank' title='分享到新浪微博'><img src='" + icon + "' alt='分享到新浪微博'/></a>";
         };
 
         var _renderKaixin = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://www.kaixin001.com/repaste/share.php?rtitle=" + title + "&rurl=" + url + "' target='_blank'><img alt='分享到开心网' src='" + icon + "' /></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://www.kaixin001.com/repaste/share.php?rtitle=" + title + "&rurl=" + url + "' target='_blank' title='分享到开心网'><img alt='分享到开心网' src='" + icon + "' /></a>";
         };
 
         var _renderPengyou = function (icon) {
@@ -136,7 +144,11 @@
         };
 
         var _renderTieba = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://tieba.baidu.com/f/commit/share/openShareApi?url=" + url + "&title=" + title + "' target='_blank'><img alt='分享到百度贴吧' src='" + icon + "'></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://tieba.baidu.com/f/commit/share/openShareApi?url=" + url + "&title=" + title + "' target='_blank' title='分享到百度贴吧'><img alt='分享到百度贴吧' src='" + icon + "'></a>";
+        };
+
+        var _renderRenminWeibo = function (icon) {
+            return "<a class='hshare hshare-" + size + "' href='http://t.people.com.cn/toshareinfo.action?url=" + url + "&title=" + title + "' target='_blank' title='分享到人民微博'><img alt='分享到人民微博' src='" + icon + "'></a>";
         };
 
         var url = encodeURIComponent(location.href);
