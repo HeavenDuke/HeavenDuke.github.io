@@ -33,6 +33,46 @@ $("#container").hshare({
         name: "tianya"
     }, {
         name: "reddit"
+    }, {
+        name: "yixin"
+    }, {
+        name: "club189"
+    }, {
+        name: "googleplus"
+    }, {
+        name: "tumblr"
+    }, {
+        name: "youdao"
+    }, {
+        name: "hotmail"
+    }, {
+        name: "ibaidu"
+    }, {
+        name: "baiduhome"
+    }, {
+        name: "linkedin"
+    }, {
+        name: "twitter"
+    }, {
+        name: "facebook"
+    }, {
+        name: "feixin"
+    }, {
+        name: "youdaocloud"
+    }, {
+        name: "qingbiji"
+    }, {
+        name: "sdonote"
+    }, {
+        name: "xinhua"
+    }, {
+        name: "isohu"
+    }, {
+        name: "gmail"
+    }, {
+        name: "instapaper"
+    }, {
+        name: "netvibes"
     }]
 });
 
@@ -67,6 +107,46 @@ $("#container2").hshare({
         name: "tianya"
     }, {
         name: "reddit"
+    }, {
+        name: "yixin"
+    }, {
+        name: "club189"
+    }, {
+        name: "googleplus"
+    }, {
+        name: "tumblr"
+    }, {
+        name: "youdao"
+    }, {
+        name: "hotmail"
+    }, {
+        name: "ibaidu"
+    }, {
+        name: "baiduhome"
+    }, {
+        name: "linkedin"
+    }, {
+        name: "twitter"
+    }, {
+        name: "facebook"
+    }, {
+        name: "feixin"
+    }, {
+        name: "youdaocloud"
+    }, {
+        name: "qingbiji"
+    }, {
+        name: "sdonote"
+    }, {
+        name: "xinhua"
+    }, {
+        name: "isohu"
+    }, {
+        name: "gmail"
+    }, {
+        name: "instapaper"
+    }, {
+        name: "netvibes"
     }]
 });
 
@@ -101,5 +181,45 @@ $("#container3").hshare({
         name: "tianya"
     }, {
         name: "reddit"
+    }, {
+        name: "yixin"
+    }, {
+        name: "club189"
+    }, {
+        name: "googleplus"
+    }, {
+        name: "tumblr"
+    }, {
+        name: "youdao"
+    }, {
+        name: "hotmail"
+    }, {
+        name: "ibaidu"
+    }, {
+        name: "baiduhome"
+    }, {
+        name: "linkedin"
+    }, {
+        name: "twitter"
+    }, {
+        name: "facebook"
+    }, {
+        name: "feixin"
+    }, {
+        name: "youdaocloud"
+    }, {
+        name: "qingbiji"
+    }, {
+        name: "sdonote"
+    }, {
+        name: "xinhua"
+    }, {
+        name: "isohu"
+    }, {
+        name: "gmail"
+    }, {
+        name: "instapaper"
+    }, {
+        name: "netvibes"
     }]
 });
