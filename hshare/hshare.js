@@ -746,7 +746,7 @@
                             _options.renderText = false;
                             _options.size = 'large';
                             container.hshare(_options);
-                            $this.append(container);
+                            $(document).append(container);
                             var sLocation = _getSelectedLocation();
                             var left = sLocation.right;
                             var top = sLocation.bottom;
