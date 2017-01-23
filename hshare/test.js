@@ -267,7 +267,7 @@ $("#container6").hshare({
     renderText: true,
     more: true,
     selectShare: true,
-    maxChar: 5,
+    maxCharNum: 3,
     extended: [{
         name: "pengyou"
     }, {
