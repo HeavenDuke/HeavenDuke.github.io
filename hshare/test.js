@@ -247,3 +247,8 @@ $("#container3").hshare({
         name: "digg"
     }]
 });
+
+$("#container4").hshare({
+    size: "large",
+    renderText: true
+});
