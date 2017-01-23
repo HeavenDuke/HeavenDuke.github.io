@@ -524,6 +524,7 @@
         var title = encodeURIComponent(document.title);
 
         var opts = options ? $.extend(true, {}, options) : $.extend(true, {}, defaults);
+        opts.size = opts.renderText == true ? "small" : opts.size;
         var size = sizes.includes(opts.size) ? opts.size : "medium";
 
         opts.platforms = [];
@@ -538,10 +539,6 @@
                     opts.platforms.push(platforms[key]);
                 }
             }
-        }
-
-        if (opts.renderText == true) {
-            opts.size = "small";
         }
 
         return this.each(function () {
