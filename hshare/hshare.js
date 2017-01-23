@@ -323,7 +323,7 @@
         };
 
         var _renderSdoNote = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://note.sdo.com/tool/collect?title=" + title + "&url=" + url + "' target='_blank' title='分享到麦库记事'><img src=" + icon + " alt='分享到麦库记事'/></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://note.sdo.com/tool/collect?text=" + title + "&url=" + url + "' target='_blank' title='分享到麦库记事'><img src=" + icon + " alt='分享到麦库记事'/></a>";
         };
 
         var _renderLinkedin = function (icon) {
@@ -343,7 +343,7 @@
         };
 
         var _renderBaiduHome = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='https://www.baidu.com/home/page/show/url?name=" + title + "&url=" + url + "' target='_blank' title='添加到百度首页'><img src=" + icon + " alt='添加到百度首页'/></a>";
+            return "<a class='hshare hshare-" + size + "' href='https://www.baidu.com/home/page/show/url?name=" + title + "&url=" + url + "&from=addtobaidu' target='_blank' title='添加到百度首页'><img src=" + icon + " alt='添加到百度首页'/></a>";
         };
 
         var _renderTumblr = function (icon) {
