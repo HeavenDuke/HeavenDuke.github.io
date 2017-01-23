@@ -77,6 +77,10 @@ $("#container").hshare({
         name: "buffer"
     }, {
         name: "hootsuite"
+    }, {
+        name: "chouti"
+    }, {
+        name: "digg"
     }]
 });
 
@@ -155,6 +159,10 @@ $("#container2").hshare({
         name: "buffer"
     }, {
         name: "hootsuite"
+    }, {
+        name: "chouti"
+    }, {
+        name: "digg"
     }]
 });
 
