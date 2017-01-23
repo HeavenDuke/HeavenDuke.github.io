@@ -250,5 +250,9 @@ $("#container3").hshare({
 
 $("#container4").hshare({
     size: "large",
-    renderText: true
+    renderText: true,
+    copyLink: true,
+    print: true,
+    bookmark: true
+
 });

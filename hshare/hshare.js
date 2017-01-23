@@ -248,7 +248,7 @@
 
     var defaults = {
         size: "small",
-        copyLink: true,
+        copyLink: false,
         print: false,
         bookmark: false,
         collapse: true,
