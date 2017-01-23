@@ -228,7 +228,10 @@
             default: false,
             icon: "https://ohtikzqed.bkt.clouddn.com/chouti.png",
             text: "抽屉网"
-        },
+        }
+    };
+
+    var addons = {
         copyLink: {
             default: false,
             icon: "https://ohtikzqed.bkt.clouddn.com/copylink.png",
@@ -243,24 +246,34 @@
             default: false,
             icon: "https://ohtikzqed.bkt.clouddn.com/bookmark.png",
             text: "收藏夹"
+        },
+        more: {
+            default: false,
+            icon: "https://ohtikzqed.bkt.clouddn.com/bookmark.png"
         }
     };
 
     var defaults = {
         size: "small",
-        copyLink: false,
+        copyLink: true,
         print: false,
         bookmark: false,
-        collapse: true,
+        more: true,
         renderText: false,
-        platforms: []
+        platforms: [],
+        extended: []
     };
 
     var sizes = ["small", "medium", "large"];
 
     var hShare = function (options) {
 
-        var _render = function (name, icon, text, customize, html) {
+        var _render = function (platform) {
+            var name = platform.name || "";
+            var icon = platform.icon || "";
+            var text = platform.text || "";
+            var customize = !!platform.customize;
+            var html = platform.customize || "";
             if (customize) {
                 return html;
             }
@@ -340,6 +353,14 @@
                         return _renderDigg(icon, text);
                     case "chouti":
                         return _renderChouti(icon, text);
+                    case "copyLink":
+                        return "";
+                    case "print":
+                        return "";
+                    case "bookmark":
+                        return "";
+                    case "more":
+                        return "";
                     default:
                         throw Error("invalid name");
                         break;
@@ -507,6 +528,57 @@
             return "<a class='hshare hshare-" + size + (opts.renderText == true ? " hshare-text" : "") + "' title='添加到收藏夹'><img align='top' alt='添加到收藏夹' src='" + icon + "'>" + (opts.renderText == true ? text : "") + "</a>";
         };
 
+        var _renderMore = function (icon) {
+            return "<a class='hshare hshare-" + size + "' title='更多'><img align='top' alt='更多' src='" + icon + "'></a>";
+        };
+
+        var _renderMorePanel = function () {
+            var result = "<div class='hshare-more-container'>";
+            var row = [];
+            result += "<table>";
+            for(var plt in opts.extended) {
+                plt = opts.extended[plt];
+                if (row.length >= 2) {
+                    result += "<tr>";
+                    row.forEach(function (item) {
+                        result += "<td>";
+                        result += _render(item);
+                        result += "</td>";
+                    });
+                    result += "</tr>";
+                    row.splice(0, row.length);
+                }
+                row.push(plt);
+            }
+            result += "<tr>";
+            row.forEach(function (item) {
+                result += "<td>";
+                result += _render(item);
+                result += "</td>";
+            });
+            result += "</tr>";
+            result += "</table>";
+            result += "</div>";
+            return result;
+        };
+
+        var _calculateLocation = function (ex, ey, ew, eh, width, height, sw, sh) {
+            var result = {};
+            if (ex + ew + width > sw) {
+                result.x = ex - width;
+            }
+            else {
+                result.x = ex + ew;
+            }
+            if (ey + eh + height > sh) {
+                result.y = ey - height;
+            }
+            else {
+                result.y = ey + eh;
+            }
+            return result;
+        };
+
         var _loadScript = function (url, callback)
         {
             var head = document.getElementsByTagName('head')[0];
@@ -541,22 +613,39 @@
             }
         }
 
+        opts.extended = [];
+        if (options && opts.more == true && (options.extended instanceof Array)) {
+            options.extended.forEach(function (platform) {
+                opts.extended.push($.extend({}, (platform.name && platforms[platform.name]) ? platforms[platform.name] : {}, platform));
+            });
+        }
+        else if (opts.more == true) {
+            for(var key in platforms) {
+                var find = false;
+                var plt = platforms[key];
+                for(var key2 in opts.platforms) {
+                    if (opts.platforms[key2].name == plt.name) {
+                        find = true;
+                        break;
+                    }
+                }
+                if (find == false) {
+                    opts.extended.push(plt);
+                }
+            }
+        }
+
         return this.each(function () {
             var $this = $(this);
 
             var _platforms = opts.platforms;
 
             _platforms.forEach(function (plt) {
-                var name = plt.name || "";
-                var icon = plt.icon || "";
-                var text = plt.text || "";
-                var isCustomized = !!plt.customize;
-                var customize = plt.customize || "";
-                $this.append($(_render(name, icon, text, isCustomized, customize)));
+                $this.append($(_render(plt)));
             });
 
             if(opts.copyLink == true) {
-                var copyEntry = $(_renderCopyLink(platforms.copyLink.icon, platforms.copyLink.text));
+                var copyEntry = $(_renderCopyLink(addons.copyLink.icon, addons.copyLink.text));
                 _loadScript("https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js", function () {
                     var clipboard = new Clipboard(copyEntry[0], {
                         text: function(trigger) {
@@ -572,7 +661,7 @@
             }
 
             if (opts.print == true) {
-                var printEntry = $(_renderPrintLink(platforms.print.icon, platforms.print.text));
+                var printEntry = $(_renderPrintLink(addons.print.icon, addons.print.text));
                 printEntry.on('click', function () {
                     window.print();
                 });
@@ -580,12 +669,35 @@
             }
 
             if (opts.bookmark == true) {
-                var bookmarkEntry = $(_renderBookmark(platforms.bookmark.icon, platforms.bookmark.text));
+                var bookmarkEntry = $(_renderBookmark(addons.bookmark.icon, addons.bookmark.text));
                 bookmarkEntry.on('click', function () {
                     alert("请按Ctrl + D以将本页面添加至收藏夹");
                 });
                 $this.append(bookmarkEntry);
             }
+
+            if (opts.more == true) {
+                var moreEntry = $(_renderMore(addons.more.icon));
+                var morePanel = $(_renderMorePanel());
+                $this.append(moreEntry);
+                $this.append(morePanel);
+                moreEntry.hover(function () {
+                    var left = $(this).position().left;
+                    var top = $(this).position().top;
+                    var entryWidth = $(this).width();
+                    var entryHeight = $(this).height();
+                    var width = morePanel.outerWidth();
+                    var height = morePanel.outerHeight();
+                    var screenWidth = $(window).width();
+                    var screenHeight = $(window).height();
+                    var location = _calculateLocation(left, top, entryWidth, entryHeight, width, height, screenWidth, screenHeight);
+                    morePanel.attr("style", "left: " + location.x + "px; top: " + location.y + "px;");
+                    morePanel.css('display', "block");
+                }, function () {
+                    morePanel.css('display', "none");
+                });
+            }
+
         });
     };
 

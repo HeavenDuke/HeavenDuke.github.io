@@ -254,5 +254,30 @@ $("#container4").hshare({
     copyLink: true,
     print: true,
     bookmark: true
+});
 
+$("#container5").hshare({
+    size: "large",
+    renderText: true,
+    more: true
+});
+
+$("#container6").hshare({
+    size: "large",
+    renderText: true,
+    more: true,
+    extended: [{
+        name: "pengyou"
+    }, {
+        name: "kaixin"
+    }, {
+        name: "linkedin"
+    }, {
+        name: "twitter"
+    }, {
+        name: "facebook"
+    }, {
+        name: "heavenduke",
+        customize: "<a class='hshare hshare-small' href='https://www.heavenduke.com'><img align='top' src='https://www.heavenduke.com/favicon.ico'>HeavenDuke</a>"
+    }]
 });
