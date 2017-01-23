@@ -233,5 +233,9 @@ $("#container3").hshare({
         name: "buffer"
     }, {
         name: "hootsuite"
+    }, {
+        name: "chouti"
+    }, {
+        name: "digg"
     }]
 });
