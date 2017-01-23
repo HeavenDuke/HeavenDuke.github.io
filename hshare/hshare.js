@@ -363,7 +363,7 @@
         };
 
         var _renderYixin = function (icon) {
-            return "<a class='hshare hshare-" + size + "' href='http://open.yixin.im/share?type=webpage&title=" + title + "&url=" + url + "' target='_blank' title='分享到易信'><img src=" + icon + " alt='分享到易信'/></a>";
+            return "<a class='hshare hshare-" + size + "' href='http://open.yixin.im/share?type=text&text=" + title + url + "' target='_blank' title='分享到易信'><img src=" + icon + " alt='分享到易信'/></a>";
         };
 
         var _renderGooglePlus = function (icon) {
