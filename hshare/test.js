@@ -73,6 +73,10 @@ $("#container").hshare({
         name: "netvibes"
     }, {
         name: "pocket"
+    }, {
+        name: "buffer"
+    }, {
+        name: "hootsuite"
     }]
 });
 
@@ -147,6 +151,10 @@ $("#container2").hshare({
         name: "netvibes"
     }, {
         name: "pocket"
+    }, {
+        name: "buffer"
+    }, {
+        name: "hootsuite"
     }]
 });
 
@@ -221,5 +229,9 @@ $("#container3").hshare({
         name: "netvibes"
     }, {
         name: "pocket"
+    }, {
+        name: "buffer"
+    }, {
+        name: "hootsuite"
     }]
 });
