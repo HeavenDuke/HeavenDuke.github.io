@@ -42,8 +42,6 @@ $("#container").hshare({
     }, {
         name: "tumblr"
     }, {
-        name: "youdao"
-    }, {
         name: "hotmail"
     }, {
         name: "ibaidu"
@@ -116,8 +114,6 @@ $("#container2").hshare({
     }, {
         name: "tumblr"
     }, {
-        name: "youdao"
-    }, {
         name: "hotmail"
     }, {
         name: "ibaidu"
@@ -189,8 +185,6 @@ $("#container3").hshare({
         name: "googleplus"
     }, {
         name: "tumblr"
-    }, {
-        name: "youdao"
     }, {
         name: "hotmail"
     }, {
