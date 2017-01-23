@@ -71,6 +71,8 @@ $("#container").hshare({
         name: "instapaper"
     }, {
         name: "netvibes"
+    }, {
+        name: "pocket"
     }]
 });
 
@@ -143,6 +145,8 @@ $("#container2").hshare({
         name: "instapaper"
     }, {
         name: "netvibes"
+    }, {
+        name: "pocket"
     }]
 });
 
@@ -215,5 +219,7 @@ $("#container3").hshare({
         name: "instapaper"
     }, {
         name: "netvibes"
+    }, {
+        name: "pocket"
     }]
 });
