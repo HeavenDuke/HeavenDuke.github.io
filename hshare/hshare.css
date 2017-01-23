@@ -40,3 +40,13 @@ a.hshare {
     cursor: pointer;
     vertical-align: middle;
 }
+
+a.hshare:hover {
+    color: black;
+    text-decoration: underline;
+    line-height: 15px;
+    font-size: 100%;
+    padding: 2px 2px 2px 2px;
+    cursor: pointer;
+    vertical-align: middle;
+}
