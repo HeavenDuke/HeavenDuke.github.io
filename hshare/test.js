@@ -266,7 +266,6 @@ $("#container6").hshare({
     size: "large",
     renderText: true,
     more: true,
-    selectShare: true,
     maxCharNum: 3,
     extended: [{
         name: "pengyou"
@@ -280,6 +279,6 @@ $("#container6").hshare({
         name: "facebook"
     }, {
         name: "heavenduke",
-        customize: "<a class='hshare hshare-small' href='https://www.heavenduke.com'><img align='top' src='https://www.heavenduke.com/favicon.ico'>HeavenDuke</a>"
+        template: "<a class='hshare hshare-small' href='https://www.heavenduke.com'><img align='top' src='https://www.heavenduke.com/favicon.ico'>HeavenDuke</a>"
     }]
 });
