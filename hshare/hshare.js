@@ -15,7 +15,7 @@
                 default: true,
                 params: {
                     apiLink: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/qzone.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/qzone.png",
                     text: "QQ空间",
                     hint: "分享到QQ空间"
                 }
@@ -26,7 +26,7 @@
                 default: true,
                 params: {
                     apiLink: "http://connect.qq.com/widget/shareqq/index.html",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/qq.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/qq.png",
                     text: "QQ好友",
                     hint: "发送给QQ好友"
                 }
@@ -37,7 +37,7 @@
                 default: true,
                 params: {
                     apiLink: "https://cli.im/api/qrcode",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/wechat.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/wechat.png",
                     text: "微信",
                     hint: "分享到微信"
                 }
@@ -48,7 +48,7 @@
                 default: true,
                 params: {
                     apiLink: "http://v.t.sina.com.cn/share/share.php",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/sinaweibo.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/sinaweibo.png",
                     text: "新浪微博",
                     hint: "分享到新浪微博"
                 }
@@ -59,7 +59,7 @@
                 default: true,
                 params: {
                     apiLink: "http://www.douban.com/recommend/",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/douban.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/douban.png",
                     text: "豆瓣",
                     hint: "推荐到豆瓣"
                 }
@@ -70,7 +70,7 @@
                 default: false,
                 params: {
                     apiLink: "http://share.renren.com/share/buttonshare",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/renren.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/renren.png",
                     text: "人人网",
                     hint: "分享到人人网"
                 }
@@ -81,7 +81,7 @@
                 default: false,
                 params: {
                     apiLink: "http://www.kaixin001.com/repaste/share.php",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/kaixin.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/kaixin.png",
                     text: "开心网",
                     hint: "分享到开心网"
                 }
@@ -92,7 +92,7 @@
                 default: false,
                 params: {
                     apiLink: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/pengyou.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/pengyou.png",
                     text: "朋友网",
                     hint: "分享到朋友网"
                 }
@@ -103,7 +103,7 @@
                 default: false,
                 params: {
                     apiLink: "http://tieba.baidu.com/f/commit/share/openShareApi",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/tieba.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/tieba.png",
                     text: "百度贴吧",
                     hint: "分享到百度贴吧"
                 }
@@ -114,7 +114,7 @@
                 default: false,
                 params: {
                     apiLink: "http://t.people.com.cn/toshareinfo.action",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/renminweibo.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/renminweibo.png",
                     text: "人民微博",
                     hint: "分享到人民微博"
                 }
@@ -125,7 +125,7 @@
                 default: false,
                 params: {
                     apiLink: "http://t.hexun.com/channel/shareweb.aspx",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/hexunweibo.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/hexunweibo.png",
                     text: "和讯微博",
                     hint: "分享到和讯微博"
                 }
@@ -136,7 +136,7 @@
                 default: false,
                 params: {
                     apiLink: "http://open.tianya.cn/widget/send_for.php",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/tianya.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/tianya.png",
                     hint: "分享到天涯网",
                     text: "天涯网"
                 }
@@ -147,7 +147,7 @@
                 default: false,
                 params: {
                     apiLink: "http://open.yixin.im/share",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/yixin.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/yixin.png",
                     text: "易信",
                     hint: "分享到易信"
                 }
@@ -158,7 +158,7 @@
                 default: false,
                 params: {
                     apiLink: "http://club.189.cn/openshare/sharepage",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/club189.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/club189.png",
                     text: "翼友圈",
                     hint: "分享到翼友圈"
                 }
@@ -169,7 +169,7 @@
                 default: false,
                 params: {
                     apiLink: "https://plus.google.com/share",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/googleplus.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/googleplus.png",
                     text: "Google+",
                     hint: "分享到Google+"
                 }
@@ -180,7 +180,7 @@
                 default: false,
                 params: {
                     apiLink: "https://www.tumblr.com/widgets/share/tool",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/tumblr.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/tumblr.png",
                     text: "tumblr",
                     hint: "分享到tumblr"
                 }
@@ -191,7 +191,7 @@
                 default: false,
                 params: {
                     apiLink: "https://outlook.live.com/owa/",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/hotmail.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/hotmail.png",
                     text: "hotmail邮箱",
                     hint: "通过hotmail邮箱发送"
                 }
@@ -202,7 +202,7 @@
                 default: false,
                 params: {
                     apiLink: "https://www.reddit.com/submit",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/reddit.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/reddit.png",
                     text: "Reddit",
                     hint: "分享到Reddit"
                 }
@@ -213,7 +213,7 @@
                 default: false,
                 params: {
                     apiLink: "http://i.baidu.com/store/",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/ibaidu.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/ibaidu.png",
                     text: "iBaidu",
                     hint: "分享到iBaidu"
                 }
@@ -224,7 +224,7 @@
                 default: false,
                 params: {
                     apiLink: "https://www.baidu.com/home/page/show/url",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/baiduhome.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/baiduhome.png",
                     text: "百度首页",
                     hint: "添加到百度首页"
                 }
@@ -235,7 +235,7 @@
                 default: false,
                 params: {
                     apiLink: "https://www.linkedin.com/shareArticle",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/linkedin.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/linkedin.png",
                     text: "linkedin",
                     hint: "分享到LinkedIn"
                 }
@@ -246,7 +246,7 @@
                 default: false,
                 params: {
                     apiLink: "https://twitter.com/intent/tweet",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/twitter.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/twitter.png",
                     text: "Twitter",
                     hint: "分享到Twitter"
                 }
@@ -257,7 +257,7 @@
                 default: false,
                 params: {
                     apiLink: "http://www.facebook.com/sharer.php",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/facebook.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/facebook.png",
                     text: "Facebook",
                     hint: "分享到Facebook"
                 }
@@ -268,7 +268,7 @@
                 default: false,
                 params: {
                     apiLink: "http://i.feixin.10086.cn/apps/share/share",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/feixin.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/feixin.png",
                     text: "飞信同窗",
                     hint: "分享到飞信同窗"
                 }
@@ -279,7 +279,7 @@
                 default: false,
                 params: {
                     apiLink: "http://note.youdao.com/memory/",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/youdaocloud.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/youdaocloud.png",
                     text: "有道云笔记",
                     hint: "分享到有道云笔记"
                 }
@@ -290,7 +290,7 @@
                 default: false,
                 params: {
                     apiLink: "http://www.qingbiji.cn/shareToQingBiJi",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/qingbiji.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/qingbiji.png",
                     text: "轻笔记",
                     hint: "分享到轻笔记"
                 }
@@ -301,7 +301,7 @@
                 default: false,
                 params: {
                     apiLink: "http://note.sdo.com/tool/collect",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/sdonote.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/sdonote.png",
                     text: "麦库记事",
                     hint: "分享到麦库记事"
                 }
@@ -312,7 +312,7 @@
                 default: false,
                 params: {
                     apiLink: "http://t.home.news.cn/share.jsp",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/xinhua.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/xinhua.png",
                     text: "新华微博",
                     hint: "分享到新华微博"
                 }
@@ -323,7 +323,7 @@
                 default: false,
                 params: {
                     apiLink: "http://i.sohu.com/a/app/mblog/add.htm",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/isohu.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/isohu.png",
                     text: "我的搜狐",
                     hint: "分享到我的搜狐"
                 }
@@ -334,7 +334,7 @@
                 default: false,
                 params: {
                     apiLink: "https://mail.google.com/mail/",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/gmail.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/gmail.png",
                     text: "Gmail",
                     hint: "通过Gmail发送"
                 }
@@ -345,7 +345,7 @@
                 default: false,
                 params: {
                     apiLink: "https://www.instapaper.com/edit",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/instapaper.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/instapaper.png",
                     text: "Instapaper",
                     hint: "分享到Instapaper"
                 }
@@ -356,7 +356,7 @@
                 default: false,
                 params: {
                     apiLink: "https://getpocket.com/edit.php",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/pocket.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/pocket.png",
                     text: "Pocket",
                     hint: "分享到Pocket"
                 }
@@ -367,7 +367,7 @@
                 default: false,
                 params: {
                     apiLink: "http://www.netvibes.com/dashboard/1",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/netvibes.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/netvibes.png",
                     text: "Netvibes",
                     hint: "分享到Netvibes"
                 }
@@ -378,7 +378,7 @@
                 default: false,
                 params: {
                     apiLink: "https://buffer.com/add",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/buffer.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/buffer.png",
                     text: "buffer",
                     hint: "'分享到Buffer"
                 }
@@ -389,7 +389,7 @@
                 default: false,
                 params: {
                     apiLink: "https://hootsuite.com/hootlet/social-share",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/hootsuite.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/hootsuite.png",
                     text: "hootsuite",
                     hint: "分享到HootSuite"
                 }
@@ -400,7 +400,7 @@
                 default: false,
                 params: {
                     apiLink: "http://digg.com/submit",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/digg.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/digg.png",
                     text: "digg",
                     hint: "分享到digg"
                 }
@@ -411,7 +411,7 @@
                 default: false,
                 params: {
                     apiLink: "http://dig.chouti.com/digg.action",
-                    icon: "https://ohtikzqed.bkt.clouddn.com/chouti.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/chouti.png",
                     text: "抽屉网",
                     hint: "分享到抽屉网"
                 }
@@ -421,14 +421,14 @@
             copyLink: {
                 template: "<a class='#{css}' title='复制链接'><img align='top' alt='复制链接' src='#{icon}'>#{text}</a>",
                 params: {
-                    icon: "https://ohtikzqed.bkt.clouddn.com/copylink.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/copylink.png",
                     text: "复制链接"
                 }
             },
             print: {
                 template: "<a class='#{css}' title='打印页面'><img align='top' alt='打印页面' src='#{icon}'>#{text}</a>",
                 params: {
-                    icon: "https://ohtikzqed.bkt.clouddn.com/print.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/print.png",
                     text: "打印"
                 },
                 callback: function () {
@@ -438,7 +438,7 @@
             bookmark: {
                 template: "<a class='#{css}' title='添加到收藏夹'><img align='top' alt='添加到收藏夹' src='#{icon}'>#{text}</a>",
                 params: {
-                    icon: "https://ohtikzqed.bkt.clouddn.com/bookmark.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/bookmark.png",
                     text: "收藏夹"
                 },
                 callback: function () {
@@ -448,7 +448,7 @@
             more: {
                 template: "<a class='#{css}' title='更多'><img align='top' alt='更多' src='#{icon}'></a>",
                 params: {
-                    icon: "https://ohtikzqed.bkt.clouddn.com/more.png"
+                    icon: "https://heavenduke.github.io/hshare/icons/more.png"
                 }
             }
         };
