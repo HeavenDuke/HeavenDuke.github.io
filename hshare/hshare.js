@@ -323,7 +323,7 @@
                 default: false,
                 params: {
                     apiLink: "http://i.sohu.com/a/app/mblog/add.htm",
-                    icon: "https://heavenduke.github.io/hshare/icons/isohu.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/sohu.png",
                     text: "我的搜狐",
                     hint: "分享到我的搜狐"
                 }
