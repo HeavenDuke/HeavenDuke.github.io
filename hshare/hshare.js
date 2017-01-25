@@ -48,7 +48,7 @@
                 default: true,
                 params: {
                     apiLink: "http://v.t.sina.com.cn/share/share.php",
-                    icon: "https://heavenduke.github.io/hshare/icons/sinaweibo.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/sina.png",
                     text: "新浪微博",
                     hint: "分享到新浪微博"
                 }
@@ -213,7 +213,7 @@
                 default: false,
                 params: {
                     apiLink: "http://i.baidu.com/store/",
-                    icon: "https://heavenduke.github.io/hshare/icons/ibaidu.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/baidu.png",
                     text: "iBaidu",
                     hint: "分享到iBaidu"
                 }
@@ -224,7 +224,7 @@
                 default: false,
                 params: {
                     apiLink: "https://www.baidu.com/home/page/show/url",
-                    icon: "https://heavenduke.github.io/hshare/icons/baiduhome.png",
+                    icon: "https://heavenduke.github.io/hshare/icons/baidu.png",
                     text: "百度首页",
                     hint: "添加到百度首页"
                 }
