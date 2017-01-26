@@ -661,8 +661,8 @@
                     var top = $(this).position().top;
                     var entryWidth = $(this).width();
                     var entryHeight = $(this).height();
-                    var width = morePanel.outerWidth();
-                    var height = morePanel.outerHeight();
+                    var width = morePanel.width();
+                    var height = morePanel.height();
                     var screenWidth = $(window).width();
                     var screenHeight = $(window).height();
                     var location = _calculateLocation(left, top, entryWidth / 2, entryHeight / 2, width, height, screenWidth, screenHeight);
