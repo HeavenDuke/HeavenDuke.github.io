@@ -526,26 +526,25 @@
             return container;
         };
 
-        //var _renderSelectionPopupContainer = function () {
-        //    return $("<div class='hshare-container'></div>");
-        //};
-
         var _calculateLocation = function (ex, ey, ew, eh, width, height, sw, sh) {
-            console.log(ex, ey, ew, eh, width, height, sw, sh)
             var result = {};
             if (ex + ew + width > sw) {
-                result.x = ex - width;
+                result.x = ex + ew - width;
             }
             else {
                 result.x = ex + ew;
             }
             if (ey + eh + height > sh) {
-                result.y = ey - height;
+                result.y = ey + eh - height;
             }
             else {
                 result.y = ey + eh;
             }
             return result;
+        };
+
+        var _isWithinBox = function(cx, cy, px, py, pw, ph) {
+            return cx >= px && cy >= py && cx <= px + pw && cy <= py + ph;
         };
 
         var _loadScript = function (url, callback) {
@@ -559,21 +558,6 @@
 
             head.appendChild(script);
         };
-
-        //var _getSelectedText = function () {
-        //    var txt = "";
-        //    if (window.getSelection) {
-        //        txt = window.getSelection();
-        //    } else if (window.document.getSelection) {
-        //        txt = window.document.getSelection();
-        //    } else if (window.document.selection) {
-        //        txt = window.document.selection.createRange().text;
-        //    }
-        //    return {
-        //        text: txt.toString(),
-        //        location : txt.getRangeAt(0).getBoundingClientRect()
-        //    }
-        //};
 
         var opts = options ? $.extend(true, {}, options) : $.extend(true, {}, defaults);
         opts.size = opts.renderText == true ? "small" : opts.size;
@@ -659,13 +643,20 @@
                 $this.append(bookmarkEntry);
             }
 
-            // Initialize extended entry if required
-            if (opts.more == true) {
-                var moreEntry = _defaultRenderer(addons.more);
-                var morePanel = _renderMorePanel();
-                $this.append(moreEntry);
-                $("body").append(morePanel);
-                moreEntry.hover(function () {
+            var _hoverout = function (event) {
+                var cursorX = event.pageX;
+                var cursorY = event.pageY;
+                var panelLeft = morePanel.position().left;
+                var panelTop = morePanel.position().top;
+                var panelWidth = morePanel.width();
+                var panelHeight = morePanel.height();
+                if (!_isWithinBox(cursorX, cursorY, panelLeft, panelTop, panelWidth, panelHeight)) {
+                    morePanel.css('display', "none");
+                }
+            };
+
+            var _hoverin = function () {
+                if (morePanel.css("display") == "none") {
                     var left = $(this).position().left;
                     var top = $(this).position().top;
                     var entryWidth = $(this).width();
@@ -674,47 +665,21 @@
                     var height = morePanel.outerHeight();
                     var screenWidth = $(window).width();
                     var screenHeight = $(window).height();
-                    var location = _calculateLocation(left, top, entryWidth, entryHeight, width, height, screenWidth, screenHeight);
+                    var location = _calculateLocation(left, top, entryWidth / 2, entryHeight / 2, width, height, screenWidth, screenHeight);
                     morePanel.attr("style", "left: " + location.x + "px; top: " + location.y + "px;");
                     morePanel.css('display', "block");
-                }, function () {
-                    morePanel.css('display', "none");
-                });
-            }
+                }
+            };
 
-            //if (opts.selectShare == true) {
-            //    $(document).on('mousedown', function (event) {
-            //        console.log(event);
-            //        var containers = $(".hshare-container");
-            //        if (containers.length != 0) {
-            //            containers.remove();
-            //        }
-            //    });
-            //
-            //    $(document).on('mouseup', function (event) {
-            //        var container = _renderSelectionPopupContainer();
-            //        setTimeout(function () {
-            //            var selectedTextInfo = _getSelectedText();
-            //            if (selectedTextInfo.text.length >= opts.maxCharNum) {
-            //                var _options = Object.create(options);
-            //                _options.selectShare = false;
-            //                _options.renderText = false;
-            //                _options.size = 'large';
-            //                _options.text = selectedTextInfo.text;
-            //                container.hshare(_options);
-            //                $this.append(container);
-            //                var left = selectedTextInfo.location.right;
-            //                var top = selectedTextInfo.location.bottom;
-            //                var width = container.outerWidth();
-            //                var height = container.outerHeight();
-            //                var screenWidth = $(window).width();
-            //                var screenHeight = $(window).height();
-            //                var location = _calculateLocation(left, top, 0, 0, width, height, screenWidth, screenHeight);
-            //                container.attr("style", "left: " + location.x + "px; top: " + location.y + "px;");
-            //            }
-            //        }, 500);
-            //    });
-            //}
+            // Initialize extended entry if required
+            if (opts.more == true) {
+                var moreEntry = _defaultRenderer(addons.more);
+                var morePanel = _renderMorePanel();
+                $this.append(moreEntry);
+                $("body").append(morePanel);
+                moreEntry.hover(_hoverin, _hoverout);
+                morePanel.on('mouseout mouseleave', _hoverout);
+            }
 
         });
     };
