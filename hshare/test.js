@@ -171,6 +171,7 @@ $("#container3").hshare({
     copyLink: true,
     print: true,
     bookmark: true,
+    more: true,
     platforms: [{
         name: "kaixin"
     }, {
