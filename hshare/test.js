@@ -266,6 +266,10 @@ $("#container6").hshare({
     size: "large",
     renderText: true,
     more: true,
+    stat: {
+        updateUrl: "https://www.heavenduke.com/hshare",
+        loadUrl: "https://www.heavenduke.com/hshare"
+    },
     maxCharNum: 3,
     extended: [{
         name: "pengyou"
@@ -279,6 +283,6 @@ $("#container6").hshare({
         name: "facebook"
     }, {
         name: "heavenduke",
-        template: "<a class='hshare hshare-small' href='https://www.heavenduke.com'><img align='top' src='https://www.heavenduke.com/favicon.ico'>HeavenDuke</a>"
+        template: "<a class='hshare hshare-small' target='_blank' href='https://www.heavenduke.com'><img align='top' src='https://www.heavenduke.com/favicon.ico'>HeavenDuke</a>"
     }]
 });

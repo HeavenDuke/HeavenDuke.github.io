@@ -4,10 +4,7 @@
 
 (function ($) {
 
-    'use strict';
-
     var hShare = function (options) {
-
         var platforms = {
             qzone: {
                 name: "qzone",
@@ -450,6 +447,12 @@
                 params: {
                     icon: "https://heavenduke.github.io/hshare/icons/more.png"
                 }
+            },
+            stat: {
+                template: "<a class='#{css} hshare-stat-container'>#{stat}</a>",
+                params: {
+                    stat: 0
+                }
             }
         };
         var sizes = ["small", "medium", "large"];
@@ -459,7 +462,6 @@
             print: false,
             bookmark: false,
             more: true,
-            maxCharNum: 5,
             renderText: false,
             platforms: [],
             extended: []
@@ -482,14 +484,14 @@
         var _defaultRenderer = function (platform) {
             platform.params.url = platform.params.url ? platform.params.url : url;
             platform.params.title = platform.params.title ? platform.params.title : title;
-            platform.params.size = platform.params.size ? platform.params.size : size;
+            platform.params.size = size;
             platform.params.text = opts.renderText == true ? platform.params.text : "";
             platform.params.css = platform.params.css ? platform.params.css : "hshare hshare-" + platform.params.size + ( opts.renderText == true ? " hshare-text" : "");
             return _render(platform);
         };
 
         var _renderer = function (platform) {
-            if ($.inArray(platform.name, Object.keys(platforms)) != -1) {
+            if (platforms.hasOwnProperty(platform.name)) {
                 return _defaultRenderer(platform);
             }
             else {
@@ -499,29 +501,50 @@
 
         var _renderMorePanel = function () {
             var container = $("<div class='hshare-more-container'></div>");
+            var header = $("<div class='hshare-more-header'><div class='hshare-more-title'>更多平台</div><div class='hshare-more-close'>×</div></div>");
+            var body = $("<div class='hshare-more-body'></div>");
+            container.append(header).append(body);
             var content = $("<table></table>");
-            container.append(content);
+            body.append(content);
             var rowData = [], row, element;
             for (var pIndex in opts.extended) {
                 var platform = opts.extended[pIndex];
                 if (rowData.length >= 2) {
                     row = $("<tr></tr>");
-                    rowData.forEach(function (item) {
-                        element = $("<td></td>");
-                        element.append(_renderer(item));
+                    for(var i = 0; i < rowData.length; i++) {
+                        element = $("<td class='hshare-more-item'></td>");
+                        var entry = _renderer(rowData[i]);
+                        element.append(entry);
+                        var name = rowData[i].name;
+                        if (opts.stat instanceof Object) {
+                            entry.on("click", function () {
+                                $.post(opts.stat.updateUrl, {platform: name}, function () {
+                                    statContainer.html(parseInt(statContainer.text().trim()) + 1);
+                                }, 'json');
+                            });
+                        }
                         row.append(element);
-                    });
+                    }
                     content.append(row);
                     rowData.splice(0, rowData.length);
                 }
                 rowData.push(platform);
             }
             row = $("<tr></tr>");
-            rowData.forEach(function (item) {
-                element = $("<td></td>");
-                element.append(_renderer(item));
+            for(i = 0; i < rowData.length; i++) {
+                element = $("<td class='hshare-more-item'></td>");
+                var entry = _renderer(rowData[i]);
+                element.append(entry);
+                var name = rowData[i].name;
+                if (opts.stat instanceof Object) {
+                    entry.on("click", function () {
+                        $.post(opts.stat.updateUrl, {platform: name}, function () {
+                            statContainer.html(parseInt(statContainer.text().trim()) + 1);
+                        }, 'json');
+                    });
+                }
                 row.append(element);
-            });
+            }
             content.append(row);
             return container;
         };
@@ -565,14 +588,15 @@
         // Initialize platforms
         opts.platforms = [];
         if (options && (options.platforms instanceof Array)) {
-            options.platforms.forEach(function (platform) {
+            for(var i = 0; i < options.platforms.length; i++) {
+                var platform = options.platforms[i];
                 opts.platforms.push($.extend({}, (platform.name && platforms[platform.name]) ? platforms[platform.name] : {}, platform));
-            });
+            }
         }
         else {
             for (var key in platforms) {
                 if (platforms[key].default) {
-                    opts.platforms.push(Object.create(platforms[key]));
+                    opts.platforms.push(new Object(platforms[key]));
                 }
             }
         }
@@ -580,9 +604,10 @@
         // initialize extended platforms
         opts.extended = [];
         if (options && opts.more == true && (options.extended instanceof Array)) {
-            options.extended.forEach(function (platform) {
+            for(i = 0; i < options.extended.length; i++) {
+                platform = options.extended[i];
                 opts.extended.push($.extend({}, (platform.name && platforms[platform.name]) ? platforms[platform.name] : {}, platform));
-            });
+            }
         }
         else if (opts.more == true) {
             for (var key in platforms) {
@@ -595,7 +620,7 @@
                     }
                 }
                 if (find == false) {
-                    opts.extended.push(plt);
+                    opts.extended.push(new Object(plt));
                 }
             }
         }
@@ -604,15 +629,32 @@
         var url = encodeURIComponent(location.href);
         var title = encodeURIComponent(document.title);
         var size = $.inArray(opts.size, sizes) != -1 ? opts.size : "medium";
+        var statContainer = null;
 
         return this.each(function () {
             var $this = $(this);
 
             var _platforms = opts.platforms;
 
-            _platforms.forEach(function (platform) {
-                $this.append(_renderer(platform));
-            });
+            if (opts.stat instanceof Object) {
+                statContainer = _defaultRenderer(addons.stat);
+                $.get(opts.stat.loadUrl, function (data) {
+                    statContainer.html(data.stat);
+                }, 'json');
+            }
+
+            for(var i = 0; i < _platforms.length; i++) {
+                var entry = _renderer(_platforms[i]);
+                var name = _platforms[i].name;
+                if (opts.stat instanceof Object) {
+                    entry.on("click", function () {
+                        $.post(opts.stat.updateUrl, {platform: name}, function () {
+                            statContainer.html(parseInt(statContainer.text().trim()) + 1);
+                        }, 'json');
+                    });
+                }
+                $this.append(entry);
+            }
 
             // Initialize copyLink entry if required
             if (opts.copyLink == true) {
@@ -674,11 +716,17 @@
             // Initialize extended entry if required
             if (opts.more == true) {
                 var moreEntry = _defaultRenderer(addons.more);
+                opts.renderText = true;
+                size = "small";
                 var morePanel = _renderMorePanel();
                 $this.append(moreEntry);
                 $("body").append(morePanel);
                 moreEntry.hover(_hoverin, _hoverout);
                 morePanel.on('mouseout mouseleave', _hoverout);
+            }
+
+            if (opts.stat instanceof Object) {
+                $this.append(statContainer);
             }
 
         });
