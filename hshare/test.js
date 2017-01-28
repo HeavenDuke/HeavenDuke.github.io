@@ -271,7 +271,6 @@ $("#container6").hshare({
         updateUrl: "https://www.heavenduke.com/hshare",
         loadUrl: "https://www.heavenduke.com/hshare"
     },
-    maxCharNum: 3,
     extended: [{
         name: "pengyou"
     }, {
