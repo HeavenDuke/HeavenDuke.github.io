@@ -63,10 +63,10 @@
             },
             renren: {
                 name: "renren",
-                template: "<a class='#{css} href='#{apiLink}?link=#{url}&title=#{title}' target='_blank' title='#{hint}'><img align='top' alt='#{hint}' src='#{icon}' />#{text}</a>",
+                template: "<a class='#{css}' href='#{apiLink}?resourceUrl=#{url}&srcUrl=#{url}&title=#{title}' target='_blank' title='#{hint}'><img align='top' alt='#{hint}' src='#{icon}' />#{text}</a>",
                 default: false,
                 params: {
-                    apiLink: "http://share.renren.com/share/buttonshare",
+                    apiLink: "http://widget.renren.com/dialog/share",
                     icon: "https://heavenduke.github.io/hshare/icons/renren.png",
                     text: "人人网",
                     hint: "分享到人人网"
@@ -518,7 +518,7 @@
                         var name = rowData[i].name;
                         if (opts.stat instanceof Object) {
                             entry.on("click", function () {
-                                $.post(opts.stat.updateUrl, {platform: name}, function () {
+                                $.post(opts.stat.updateUrl, {platform: name, url: url}, function () {
                                     statContainer.html(parseInt(statContainer.text().trim()) + 1);
                                 }, 'json');
                             });
@@ -642,7 +642,7 @@
 
             if (opts.stat instanceof Object) {
                 statContainer = _defaultRenderer(addons.stat);
-                $.get(opts.stat.loadUrl, function (data) {
+                $.get(opts.stat.loadUrl, {url: url}, function (data) {
                     statContainer.html(data.stat);
                 }, 'json');
             }
@@ -652,7 +652,7 @@
                 var name = _platforms[i].name;
                 if (opts.stat instanceof Object) {
                     entry.on("click", function () {
-                        $.post(opts.stat.updateUrl, {platform: name}, function () {
+                        $.post(opts.stat.updateUrl, {platform: name, url: url}, function () {
                             statContainer.html(parseInt(statContainer.text().trim()) + 1);
                         }, 'json');
                     });
