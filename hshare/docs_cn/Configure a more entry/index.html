@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>“更多”面板 - HShare说明文档</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "“更多”面板";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../" class="icon icon-home"> HShare说明文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../">首页</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Getting%20started/">基本使用</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configure%20a%20platform/">平台配置</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="">“更多”面板</a>
+        
+            <ul>
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Enable%20statistics/">统计接口</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Supported%20platforms/">支持平台</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../">HShare说明文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>“更多”面板</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>由于HShare支持40种平台，同时显示所有这些平台会让页面显得十分臃肿。</p>
+<p>所以我们提供了一个“更多平台”的分享按钮，其默认为一个"..."样的按钮。当光标浮动到按钮上时，一个包含所有未显示(或用户自定义)的面板将会被呈现在页面上。</p>
+<p>与此相关的配置项为<code>more</code>和<code>extended</code>，仅当前者被设为<code>true</code>时后者才会生效。下面是一个例子：</p>
+<pre><code class="javascript">$(&quot;#container&quot;).hshare({
+    more: true,
+    extended: [{
+        name: &quot;pengyou&quot;
+    }, {
+        name: &quot;kaixin&quot;
+    }, {
+        name: &quot;linkedin&quot;
+    }, {
+        name: &quot;twitter&quot;
+    }, {
+        name: &quot;facebook&quot;
+    }, {
+        name: &quot;heavenduke&quot;,
+        template: &quot;&lt;a class='hshare hshare-small' target='_blank' href='https://www.heavenduke.com'&gt;&lt;img align='top' src='https://www.heavenduke.com/favicon.ico'&gt;HeavenDuke&lt;/a&gt;&quot;
+    }]
+});
+</code></pre>
+
+<p>可以看到，用户同样可以对“更多”面板中的平台进行自定义。自定义的方法与<a href="../Configure%20a%20platform">平台配置</a>中的方法十分相似，其主要区别在于：</p>
+<ol>
+<li><strong>size</strong> 参数是无效的，除非用户指定尺寸，否则图标大小默认为small.</li>
+<li><strong>text</strong> 不论renderText被设置为true还是false，文字都是会被显示的.</li>
+</ol>
+<p>其他内容请参考<a href="../Configure%20a%20platform">平台配置</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Enable%20statistics/" class="btn btn-neutral float-right" title="统计接口"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Configure%20a%20platform/" class="btn btn-neutral" title="平台配置"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Configure%20a%20platform/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Enable%20statistics/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

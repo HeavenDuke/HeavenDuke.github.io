@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>基本使用 - HShare说明文档</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "基本使用";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../" class="icon icon-home"> HShare说明文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../">首页</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="">基本使用</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">基本说明</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_2">附加说明</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_3">其他</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configure%20a%20platformform">平台配置</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configure%20a%20more%20entry0entry">“更多”面板</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Enable%20statisticscs">统计接口</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Supported%20platforms/">支持平台</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../">HShare说明文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>基本使用</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h4 id="_1">基本说明</h4>
+<p>步骤1：在HTML中指定容器：</p>
+<pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;!-- something here --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;container&quot;&gt;&lt;/div&gt;
+        &lt;!-- something here --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>步骤二：在JS中按如下方式配置HShare</p>
+<pre><code class="javascript">$(&quot;#container&quot;).hshare();
+</code></pre>
+
+<p>hshare方法还可接收用户自定义的配置项：</p>
+<pre><code class="javascript">$(&quot;#container&quot;).hshare({
+    size: &quot;large&quot;,
+    copyLink: false,
+    platforms: [{
+        name: &quot;wechat&quot;
+    }, {
+        name: &quot;qzone&quot;
+    }]
+});
+</code></pre>
+
+<p>所有可配置的参数如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">type</th>
+<th align="center">meaning</th>
+<th align="center">value</th>
+<th align="center">defaultValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">size</td>
+<td align="center">string</td>
+<td align="center">图标的尺寸</td>
+<td align="center">small/medium/large</td>
+<td align="center">medium</td>
+</tr>
+<tr>
+<td align="center">copyLink</td>
+<td align="center">boolean</td>
+<td align="center">是否显示“复制链接”这一项目</td>
+<td align="center">true/false</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">print</td>
+<td align="center">boolean</td>
+<td align="center">是否显示“打印页面”这一项目</td>
+<td align="center">true/false</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">bookmark</td>
+<td align="center">boolean</td>
+<td align="center">是否显示“添加到浏览器收藏夹”这一项目</td>
+<td align="center">true/false</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">more</td>
+<td align="center">boolean</td>
+<td align="center">是否设置一个“更多”面板以显示更多的平台</td>
+<td align="center">true/false</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">renderText</td>
+<td align="center">boolean</td>
+<td align="center">分享按钮是否包含文字</td>
+<td align="center">true/false</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">platforms</td>
+<td align="center">Array</td>
+<td align="center">要显示的平台</td>
+<td align="center">---</td>
+<td align="center">undefined</td>
+</tr>
+<tr>
+<td align="center">extends</td>
+<td align="center">Array</td>
+<td align="center">要在“更多”面板中显示的平台</td>
+<td align="center">---</td>
+<td align="center">undefined</td>
+</tr>
+<tr>
+<td align="center">stat</td>
+<td align="center">Object</td>
+<td align="center">统计接口</td>
+<td align="center">---</td>
+<td align="center">undefined</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_2">附加说明</h4>
+<ul>
+<li><strong>copyLink</strong>: 设置该配置项会导致在分享按钮列表中出现一个按钮，点击按钮后当前页面的地址会被复制到剪贴板中。</li>
+<li><strong>print</strong>: 设置该配置项会导致在分享按钮列表中出现一个按钮，点击按钮后浏览器会打开打印页面，请求打印当前网页。</li>
+<li><strong>bookmark</strong>: 设置该配置项会导致在分享按钮列表中出现一个按钮，点击按钮后浏览器会提示用户使用CTRL+D将页面添加至收藏夹。 </li>
+<li><strong>more</strong>: 由于HShare支持40种平台，同时显示这些平台会导致页面臃肿化。设置该配置项为true会导致在分享按钮列表中出现一个按钮，鼠标浮动至该按钮上时，未被列入在按钮列表中（或用户自定义）的平台会出现再出现的“更多平台”面板里.</li>
+<li><strong>size/renderText</strong>: 当设置renderText为true后，size会默认被设置为small。</li>
+</ul>
+<h4 id="_3">其他</h4>
+<ul>
+<li><a href="../Supported%20platforms">支持平台</a> 中提供了所有HShare支持的平台的清单。</li>
+<li>用户可以按照自己的需求配置HShare中每一个平台的参数，具体的配置方法参考<a href="../Configure%20a%20more%20entry0entry">“更多”面板</a>  </li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Configure%20a%20platformform" class="btn btn-neutral float-right" title="平台配置"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="首页"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Configure%20a%20platformform" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

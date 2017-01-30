@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>HShare Documentation</title>
+  <title>HShare说明文档</title>
   
 
   <link rel="shortcut icon" href="./img/favicon.ico">
@@ -38,9 +38,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> HShare Documentation</a>
+        <a href="site" class="icon icon-home"> HShare说明文档</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
@@ -51,26 +51,26 @@
           
             <li>
     <li class="toctree-l1 current">
-        <a class="current" href=".">Home</a>
+        <a class="current" href="site">首页</a>
         
             <ul>
             
                 <li class="toctree-l3"><a href="#demo">Demo</a></li>
                 
             
-                <li class="toctree-l3"><a href="#supported-platforms">Supported Platforms</a></li>
+                <li class="toctree-l3"><a href="#_1">支持平台</a></li>
                 
             
-                <li class="toctree-l3"><a href="#install">Install</a></li>
+                <li class="toctree-l3"><a href="#_2">安装</a></li>
                 
             
-                <li class="toctree-l3"><a href="#usage">Usage</a></li>
+                <li class="toctree-l3"><a href="#_3">基本使用</a></li>
                 
             
-                <li class="toctree-l3"><a href="#contributors">Contributors</a></li>
+                <li class="toctree-l3"><a href="#_4">开发者</a></li>
                 
             
-                <li class="toctree-l3"><a href="#license">License</a></li>
+                <li class="toctree-l3"><a href="#_5">授权协议</a></li>
                 
             
             </ul>
@@ -80,35 +80,35 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="Getting started/">Getting Started</a>
+        <a class="" href="Getting%20started/">基本使用</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="Configure a platform/">Configure a Platform</a>
+        <a class="" href="Configure%20a%20platform/">平台配置</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="Configure a more entry/">More Entry</a>
+        <a class="" href="Configure%20a%20more%20entry/">“更多”面板</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="Enable statistics/">Enable Statistics</a>
+        <a class="" href="Enable%20statistics/">统计接口</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="Supported platforms/">Supported Platforms</a>
+        <a class="" href="Supported%20platforms/">支持平台</a>
         
     </li>
 <li>
@@ -123,7 +123,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">HShare Documentation</a>
+        <a href="site">HShare说明文档</a>
       </nav>
 
       
@@ -131,11 +131,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".">Docs</a> &raquo;</li>
+    <li><a href="site">Docs</a> &raquo;</li>
     
       
     
-    <li>Home</li>
+    <li>首页</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -145,13 +145,14 @@
           <div role="main">
             <div class="section">
               
-                <p>This is a social sharing plugin that allows web developers to include social sharing buttons/links with just some basic configuration. Existing platforms such as bshare/baidushare/jiathis uses <strong>HTTP</strong> protocol to fetch resources which makes it very hard to deploy such services on <strong>HTTPS</strong> pages due to security restriction. This is what triggers this project. Currently it still supports limited number of platform, but I believe that it will be better through time : )</p>
+                <p>HShare是一个简单的社交分享JQuery插件，用户通过编写简单的配置项即可将分享按钮嵌入至网页中。
+将本插件直接部署在支持HTTPS的网页中即可让分享接口支持HTTPS。</p>
 <h2 id="demo">Demo</h2>
-<p>Here is a demo of the our plugin:</p>
-<p><img alt="demo picture" src="http://ohtikzqed.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170121223132.jpg" /></p>
-<h2 id="supported-platforms">Supported Platforms</h2>
-<p><a href="./Supported platforms">Platforms</a></p>
-<h2 id="install">Install</h2>
+<p>下面是利用本插件生成的一组分享按钮</p>
+<p><img alt="演示范例" src="http://ohtikzqed.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170121223132.jpg" /></p>
+<h2 id="_1">支持平台</h2>
+<p><a href="Supported%20platforms">支持平台</a></p>
+<h2 id="_2">安装</h2>
 <p><strong>bower</strong></p>
 <pre><code class="plain">bower install --save bower
 </code></pre>
@@ -162,8 +163,9 @@
 &lt;script type=&quot;text/javascript&quot; href=&quot;hshare.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 
-<h2 id="usage">Usage</h2>
-<p>First specify a container in your html files like this:</p>
+<p>本插件依赖于jQuery，因此在使用本插件之前请确保jQuery已经载入。</p>
+<h2 id="_3">基本使用</h2>
+<p>步骤1：在HTML中指定容器：</p>
 <pre><code class="html">&lt;html&gt;
     &lt;head&gt;
         &lt;!-- something here --&gt;
@@ -175,11 +177,11 @@
 &lt;/html&gt;
 </code></pre>
 
-<p>Then initialize the social sharing components in your JavaScript file like this:</p>
+<p>步骤二：在JS中按如下方式配置HShare</p>
 <pre><code class="javascript">$(&quot;#container&quot;).hshare();
 </code></pre>
 
-<p>You can also specify options for hshare like this:</p>
+<p>hshare方法还可接收用户自定义的配置项：</p>
 <pre><code class="javascript">$(&quot;#container&quot;).hshare({
     size: &quot;large&quot;,
     copyLink: false,
@@ -191,20 +193,20 @@
 });
 </code></pre>
 
-<p>Furthur Demo &amp; Documentation is shown below:</p>
+<p>更多的说明文档请参考：</p>
 <ul>
-<li><a href="./Getting started">Getting Started</a>  </li>
-<li><a href="./Configure a platform">Configure a Platform</a>  </li>
-<li><a href="./Configure a more entry">More Entry</a>  </li>
-<li><a href="./Enable statistics">Enable Statistics</a>  </li>
-<li><a href="./Supported platforms">Supported Platforms</a>  </li>
+<li><a href="Getting%20started">基本使用</a>  </li>
+<li><a href="Configure%20a%20platform">平台配置</a>  </li>
+<li><a href="Configure%20a%20more%20entry">“更多”面板</a>  </li>
+<li><a href="Enable%20statistics">统计接口</a>  </li>
+<li><a href="Supported%20platforms">支持平台</a>  </li>
 </ul>
-<h2 id="contributors">Contributors</h2>
+<h2 id="_4">开发者</h2>
 <ul>
 <li><a href="https://github.com/HeavenDuke">HeavenDuke</a>  </li>
 <li><a href="https://github.com/AsherWang">AsherWang</a>  </li>
 </ul>
-<h2 id="license">License</h2>
+<h2 id="_5">授权协议</h2>
 <p><a href="https://opensource.org/licenses/MIT">MIT</a></p>
               
             </div>
@@ -213,7 +215,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Getting started/" class="btn btn-neutral float-right" title="Getting Started"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="Getting%20started/" class="btn btn-neutral float-right" title="基本使用"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -241,7 +243,7 @@
       
       
       
-        <span style="margin-left: 15px"><a href="Getting started/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="Getting%20started/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -251,5 +253,5 @@
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2017-01-30 04:48:42.693893
+Build Date UTC : 2017-01-30 04:54:53.157857
 -->
