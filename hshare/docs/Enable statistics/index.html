@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enable Statistics - HShare Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Enable Statistics";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> HShare Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Getting started/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configure a platform/">Configure a Platform</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configure a more entry/">More Entry</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Enable Statistics</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#loadstat">loadStat</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#updatestat">updateStat</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Supported platforms/">Supported Platforms</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">HShare Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Enable Statistics</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>To make hshare more powerful, we also provides customized statistics feature.</p>
+<p>The API is shown as below:</p>
+<h3 id="loadstat">loadStat</h3>
+<p><strong>URL</strong>: [customized]?url=[url]<br />
+<strong>Method</strong>: GET<br />
+<strong>Response Type</strong>: JSON<br />
+<strong>Response data</strong>:   </p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">type</th>
+<th align="center">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">stat</td>
+<td align="center">Integer</td>
+<td align="center">the shared times of current page</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong>
+Request:</p>
+<pre><code class="plain">GET https://www.heavenduke.com/hshare/?url=www.baidu.com
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+    &quot;stat&quot;: 2333
+}
+</code></pre>
+
+<h3 id="updatestat">updateStat</h3>
+<p><strong>URL</strong>: [customized]<br />
+<strong>Method</strong>: POST<br />
+<strong>Request Type</strong>: JSON<br />
+<strong>Request Data</strong>:  </p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">type</th>
+<th align="center">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">name of the clicked platform</td>
+</tr>
+<tr>
+<td align="center">url</td>
+<td align="center">String</td>
+<td align="center">current page's url</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Type</strong>: JSON<br />
+<strong>Response data</strong>: </p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">type</th>
+<th align="center">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">stat</td>
+<td align="center">Integer</td>
+<td align="center">the shared times of current page</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong>
+Request:</p>
+<pre><code class="plain">GET https://www.heavenduke.com/hshare/?url=www.baidu.com
+{
+    &quot;name&quot;: &quot;baidu&quot;,
+    &quot;url&quot;: &quot;www.baidu.com&quot;
+}
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+    &quot;stat&quot;: 2333
+}
+</code></pre>
+
+<p>The url of the two API is configurable. To enable statistics feature, you should specify both url. Here is an example:</p>
+<pre><code class="javascript">$(&quot;#container&quot;).hshare({
+    stat: {
+        loadUrl: &quot;https://www.heavenduke.com/hshare&quot;,
+        updateUrl: &quot;https://www.heavenduke.com/hshare&quot;
+    }
+});
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Supported platforms/" class="btn btn-neutral float-right" title="Supported Platforms"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Configure a more entry/" class="btn btn-neutral" title="More Entry"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Configure a more entry/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Supported platforms/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

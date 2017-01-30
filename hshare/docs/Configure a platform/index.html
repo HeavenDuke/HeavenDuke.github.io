@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configure a Platform - HShare Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Configure a Platform";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> HShare Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Getting started/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Configure a Platform</a>
+        
+            <ul>
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Configure a more entry/">More Entry</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Enable statistics/">Enable Statistics</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Supported platforms/">Supported Platforms</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">HShare Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Configure a Platform</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>The simplest way to configure your platforms is to specify merely the name of a supported platform like this:</p>
+<pre><code class="javascript">$(&quot;#container&quot;).hshare({
+    platforms: [{
+        name: &quot;kaixin&quot;
+    }, {
+        name: &quot;pengyou&quot;
+    }, {
+        name: &quot;qzone&quot;
+    }, {
+        name: &quot;tieba&quot;
+    }, {
+        name: &quot;douban&quot;
+    }, {
+        name: &quot;qq&quot;
+    }, {
+        name: &quot;renren&quot;
+    }, {
+        name: &quot;sinaweibo&quot;
+    }]
+});
+</code></pre>
+
+<p>hshare embeds the corresponding configuration for these platforms and will use them during rendering.</p>
+<p><strong>Remember</strong>: If you don't specify platforms(platforms param's value is undefined) then the following platform will be used by default.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">qzone</td>
+<td align="center">QQ空间</td>
+</tr>
+<tr>
+<td align="center">qq</td>
+<td align="center">QQ</td>
+</tr>
+<tr>
+<td align="center">wechat</td>
+<td align="center">微信</td>
+</tr>
+<tr>
+<td align="center">sinaweibo</td>
+<td align="center">新浪微博</td>
+</tr>
+<tr>
+<td align="center">douban</td>
+<td align="center">豆瓣</td>
+</tr>
+</tbody>
+</table>
+<p>Furthermore, in hshare, a platform can be customized as you wish. After analysing API of a great many platforms, we have concluded that a platform can be configured with the following components:
+<em> An HTML template.
+</em> Some params that should be specified dynamically into the template.
+* An click event handler that is called when the HTML DOM is clicked.</p>
+<p>For example, here is the configuration data for the Qzone platform that we specified by default:</p>
+<pre><code class="javascript">{
+    name: &quot;qzone&quot;,
+    template: &quot;&lt;a class='#{css}' href='#{apiLink}?url=#{url}&amp;title=#{title}' target='_blank'  title='#{hint}'&gt;&lt;img align='top' src='#{icon}' alt='#{hint}' /&gt;#{text}&lt;/a&gt;&quot;,
+    params: {
+        apiLink: &quot;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey&quot;,
+        icon: &quot;https://heavenduke.github.io/hshare/icons/qzone.png&quot;,
+        text: &quot;QQ空间&quot;,
+        hint: &quot;分享到QQ空间&quot;,
+        size: &quot;medium&quot;,
+        title: &quot;HShare+Demo&quot;,
+        url: &quot;https%3a%2f%2fheavenduke.github.io%2fhshare%2ftest.html&quot;,
+        css: &quot;hshare hshare-medium hshare-text&quot;
+    }
+}
+</code></pre>
+
+<p>defailed explanation is shown below:</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">type</th>
+<th align="center">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">name</td>
+<td align="center">String</td>
+<td align="center">the name of the platform</td>
+</tr>
+<tr>
+<td align="center">template</td>
+<td align="center">String(HTML)</td>
+<td align="center">the HTML template that the platform's entry use</td>
+</tr>
+<tr>
+<td align="center">params</td>
+<td align="center">Object(Pair of strings)</td>
+<td align="center">data that will be filled into template</td>
+</tr>
+<tr>
+<td align="center">callback</td>
+<td align="center">Function</td>
+<td align="center">event handler when the entry is clicked</td>
+</tr>
+</tbody>
+</table>
+<p>in the above example, params consists of key-value pairs. In the HTML template, you can specify a dynamic data use syntax <code>#{key}</code>, and the corresponding value will be filled into the specified location. For the above example, the eventually HTML is like below:</p>
+<pre><code class="html">&lt;a class='hshare hshare-medium hshare-text' href='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https%3a%2f%2fheavenduke.github.io%2fhshare%2ftest.html&amp;title=HShare+Demo' target='_blank'  title='分享到QQ空间'&gt;
+    &lt;img align='top' src='https://heavenduke.github.io/hshare/icons/qzone.png' alt='分享到QQ空间' /&gt;
+    QQ空间
+&lt;/a&gt;
+</code></pre>
+
+<p><strong> Notice 1</strong>  </p>
+<p>All params can be overritten. If you specify a customized template, you can specify any params as you like.</p>
+<p>But if you use the default template of our supported platforms, remember that the default template is as followed:</p>
+<pre><code class="html">&lt;a class='#{css}' href='#{apiLink}?url=#{url}&amp;title=#{title}' target='_blank'  title='#{hint}'&gt;
+    &lt;img align='top' src='#{icon}' alt='#{hint}' /&gt;
+    #{text}
+&lt;/a&gt;
+</code></pre>
+
+<p>Correspondingly, the following reserved param key will be used:</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">type</th>
+<th align="center">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">css</td>
+<td align="center">String</td>
+<td align="center">css class that the entry use(defined in <strong>hshare.min.css</strong>)</td>
+</tr>
+<tr>
+<td align="center">title</td>
+<td align="center">String(urlencoded)</td>
+<td align="center">the HTML template that the platform's entry use</td>
+</tr>
+<tr>
+<td align="center">url</td>
+<td align="center">String(urlencoded)</td>
+<td align="center">data that will be filled into template</td>
+</tr>
+<tr>
+<td align="center">apiLink</td>
+<td align="center">String(url)</td>
+<td align="center">the url that the social platform use for sharing</td>
+</tr>
+<tr>
+<td align="center">size</td>
+<td align="center">String</td>
+<td align="center">the entry's size</td>
+</tr>
+<tr>
+<td align="center">text</td>
+<td align="center">String</td>
+<td align="center">the entry's shown text if renderText's value is true</td>
+</tr>
+<tr>
+<td align="center">hint</td>
+<td align="center">String</td>
+<td align="center">tooltip that will be shown when the cursor hovers above the entry</td>
+</tr>
+<tr>
+<td align="center">icon</td>
+<td align="center">String(url)</td>
+<td align="center">icon that the entry use</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Notice 2</strong></p>
+<p>since the callback param is a function used as event handler, its format should be like:</p>
+<pre><code class="javascript">function (event) {
+    // some action....
+    // you can use $(this) to get the clicked entry.
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Configure a more entry/" class="btn btn-neutral float-right" title="More Entry"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Getting started/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Getting started/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Configure a more entry/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
