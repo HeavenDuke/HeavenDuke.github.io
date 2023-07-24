@@ -75,10 +75,14 @@ a {
 .packs a {
     flex-grow: 1;
     color: white;
-    background: #409EFF;
+    background: rgb(64, 158, 255);
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+}
+
+.packs a:hover {
+    background: rgba(64, 158, 255, 0.8);
 }
 
 .packs a:first-child {
