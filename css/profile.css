@@ -77,7 +77,6 @@ a {
     color: white;
     background: rgb(64, 158, 255);
     padding: 10px;
-    border-radius: 5px;
     text-align: center;
 }
 
@@ -86,12 +85,7 @@ a {
 }
 
 .packs a:first-child {
-    border-radius: 5px 0 0 5px;
     border-right: 2px solid white;
-}
-
-.packs a:last-child {
-    border-radius: 0 5px 5px 0;
 }
 
 .contact {
@@ -113,4 +107,8 @@ a {
     color: #409EFF;
     font-size: 18px !important;
     margin-right: 10px;
+}
+
+.m-t-15 {
+    margin-top: 15px;
 }
